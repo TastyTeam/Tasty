@@ -1,0 +1,213 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发布新话题 - 美食天下</title>
+<meta name="renderer" content="webkit">
+<meta name="keywords" content="">
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="css/c3.css">
+<link rel="stylesheet" type="text/css" href="css/c1.css">
+<link rel="stylesheet" type="text/css" href="css/c2.css">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<style>
+.header-nav{
+    background-color: black;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+#sub_menu_1,#sub_menu_2{ 
+    display: none; 
+} 
+.dropdown-menu{
+    text-align: center !important;
+} 
+.i{
+    float: left;
+    margin-left: 10px;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="header-nav">
+        <div role="navigation">
+            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
+            <ul class="hd-nav">
+                <li class="search-box-li">
+                    <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
+                            class="iconfont search-submit">&#xe617;</i></div>
+                    <i class="search-exit"></i></li>
+                <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="privateorder.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="shop_index.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="map.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="communities.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+            </ul>
+
+            <div class="sec_menu">
+                            <ul>
+                                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
+                                <li><a>欢迎，</a></li>&nbsp;
+                                <li><a>用户名</a></li>&nbsp;
+                                <li onclick = "f('sub_menu_1')">
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-inverse dropdown-toggle btn-xs" data-toggle="dropdown" >
+                                        <span class="caret"></span>
+                                    </button>
+                                   
+                                    <ul class="dropdown-menu" role="menu" id="sub_menu_1">
+                            			<li class="sma-menu"><a href="self.html"><img src="images/menu11.png">个人中心</a></li><br>
+                            			<li><a href="comment.html"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
+                            			<li><a href="order.html"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
+                            			<li><a href="#"><img src="images/menu44.png">&nbsp;退出登录</a></li>
+                    				</ul>
+                                 
+                                    </div>
+                                </li>
+                            </ul>
+                            </div>
+
+
+
+        </div>
+        <div class="search-box">
+            <form method="post" action="#" id="search-keyword">
+                <input type="text" name="search-keyword" placeholder="请输入您的内容">
+                <span>
+                    </span>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="js/jquery1-1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
+</header>
+
+
+<!-- 主框架 -->
+
+<div class="w_main clear">
+
+<div class="mod_right">
+
+<div class="mod_location clear" style="position: relative;top:50px;width: 800px;text-align: center;" >
+<div class="left">
+        
+<!-- <a href="###" title="回到我的话题" class="return"> </a> -->
+
+发布新话题
+</div>
+</div>
+
+<form action="/center/pai-add/" id="J_form" enctype="multipart/form-data" method="post" style="position: absolute;left: 260px;">
+<div class="mr_edit mr_edit_center clear">
+<ul>
+<li class="low_tip">您的浏览器版本太低，无法使用新版发布话题，请升级。 <a href="#" target="_blank">点击进入老版编辑页</a></li>
+<li>
+<label class="must">上传图片（最多9张）</label><br>
+<div class="J_upload">上传图片
+<input multiple class="J_img" id="J_m_cover" accept="image/png,image/gif,image/jpeg"  type="file">
+</div>
+<div style="width: 800px;height:100px;">
+	<div style="width:100px;height: 100px;" class="i"><img src="images/1.png" style="width:100px;height: 100px;"></div>
+    <div style="width:100px;height: 100px;" class="i"><img src="images/1.png" style="width:100px;height: 100px;"></div>
+    <div style="width:100px;height: 100px;" class="i"><img src="images/1.png" style="width:100px;height: 100px;"></div>
+    <div style="width:100px;height: 100px;" class="i"><img src="images/1.png" style="width:100px;height: 100px;"></div>
+    <div style="width:100px;height: 100px;" class="i"><img src="images/1.png" style="width:100px;height: 100px;"></div>
+    <div style="width:100px;height: 100px;" class="i"><img src="images/1.png" style="width:100px;height: 100px;"></div>
+
+</div>
+<span class="img_status" id="multi_cover_status"> </span>
+<div id="cover" class="clear">
+</div>
+</li>
+
+<li>
+<label>加个标题（非必填）</label><br>
+<input id="com_title" name="title" class="inputM" type="text">
+</li>
+
+
+
+<li>
+<label class="must">写话题</label><br>
+<textarea id="J_message" name="message" style="height:300px;"></textarea>
+<input class="btn1" name="submit" type="submit" value="发布话题" >
+</li>
+</ul>
+
+</div>
+
+
+
+
+
+
+</form>
+
+
+
+
+</div>
+
+
+</div>
+
+
+<footer style="position: relative;top:700px;">
+    <div>
+        <ul class="footer-top">
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="privateorder.html">私人订制</a></li>
+            <li><a href="article.html">美食资讯</a></li>
+            <li><a href="shop_index.html">果蔬商城</a></li>
+            <li><a href="map.html">趣吃导航</a></li>
+            <li><a href="communities.html">美食分享</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="footer-body">
+            <li>
+                <span>电话:</span><span>8888-66666666</span>
+            </li>
+            <li>
+                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
+            </li>
+            <li>
+                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
+            </li>
+        </ul>
+        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
+
+    </div>
+    <div>
+
+</div>
+ 
+</footer>
+
+
+
+
+</body>
+</html>
+

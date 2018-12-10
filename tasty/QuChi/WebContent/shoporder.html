@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商城订单</title>
+    <link rel="stylesheet" type="text/css" href="css/button.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="css/default.css">
+<style>
+.shop a:hover{color: #e25111;
+}
+.shop a:visited{color: #e25111;}
+.menu{
+    margin-top: 0px;
+}
+header{
+    padding-top: 0px;
+}
+body{background-color: #f7f7f7;}
+.header-nav{
+    background-color: black;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+#sub_menu_1,#sub_menu_2{ 
+    display: none; 
+} 
+.dropdown-menu{
+    text-align: center !important;
+}    
+.main{width: 100%;margin-top: 100px;margin-right:0px;float:left;}
+.main-left{
+    width: 160px;height:500px;float:left;margin-left: 70px;
+}
+.main-left a:hover{text-decoration: none;}
+.main-left a{text-decoration: none;color: #333;}
+.main-left tr td h4{color: black;font-family: "微软雅黑";font-weight: bold;}
+.main-right {border: 1px solid #eeeeee;margin-left: 230px;height: auto;width: 1000px;background-color: white;margin-top: 15px;}
+.main-right tr td h4{font-weight: bold;}
+.table-self{padding-left: 100px;font-size: 19px;}
+.divcss5-td-1{width: 100px;} 
+.divcss5-td-2{width: 30px;} 
+.divcss5-td-3{width: 650px;} 
+.divcss5-td-4{width: 100px;}
+.grey{background-color: #eeeeee;height: 30px;width: 98%;margin:0 auto;font-size: 10px;padding-top: 8px;}
+.orderlist{width: 98%;margin: 0 auto;height: auto;padding-bottom: 10px;}
+.orderlist-tr-1{height: 100px;}
+.orderlist-td-1{width: 150px;text-align: center;color:#A699B3;border-bottom: #A699B3;}
+.orderlist-td-2{width: 100px;}
+.orderlist-td-3{width: 400px;color:#A699B3;}
+.orderlist-td-4{width: 200px;font-weight: bold;color: #333;font-size: 18px;}
+.orderlist-td-5{width: 100px;color:#A699B3;}
+
+footer{
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+} 
+.divcss-td-1{width: 170px;}
+.divcss-td-2{width: 480px;}
+.divcss-td-3{width: 200px;}
+.divcss-td-4{width: 100px;}
+</style>
+</head>
+<body style="height: 100%;">
+<!-- 导航栏 -->
+<div class="menu">
+<header>
+    <div class="header-nav">
+        <div role="navigation">
+            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
+            <ul class="hd-nav">
+                <li class="search-box-li">
+                    <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
+                            class="iconfont search-submit">&#xe617;</i></div>
+                    <i class="search-exit"></i></li>
+                <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="privateorder.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="shop_index.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="map.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="communities.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+            </ul>
+
+            <div class="sec_menu">
+            <ul>
+                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
+                <li><a>欢迎，</a></li>&nbsp;
+                <li><a>用户名</a></li>&nbsp;
+                <li onclick = "f('sub_menu_1')">
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-inverse dropdown-toggle btn-xs" data-toggle="dropdown" >
+                        <span class="caret"></span>
+                    </button>
+                   
+                    <ul class="dropdown-menu" role="menu" id="sub_menu_1">
+                            			<li class="sma-menu"><a href="self.html"><img src="images/menu11.png">个人中心</a></li><br>
+                            			<li><a href="comment.html"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
+                            			<li><a href="order.html"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
+                            			<li><a href="#"><img src="images/menu44.png">&nbsp;退出登录</a></li>
+                    				</ul>
+                 
+                    </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+       
+        <div class="search-box">
+            <form method="post" action="#" id="search-keyword">
+                <input type="text" name="search-keyword" placeholder="请输入您的内容">
+                <span>
+                    </span>
+            </form>
+        </div>
+    </div>
+</header>
+</div>
+
+<!-- 左侧菜单 -->
+<div class="main">
+    <div class="main-left">
+        <table style="border-collapse:separate; border-spacing:0px 15px;">
+            <br>
+            <tr>
+               <td><h4><img src="images/left1.png">我的资料</h4></td>
+            </tr>
+            <tr>
+                <td><a href="self.html">&nbsp; &nbsp;&nbsp;&nbsp;个人中心</a></td>
+            </tr>
+            <tr>
+                <td><h4><img src="images/left2.png">我的订单</h4></td>
+            </tr>
+            <tr>
+                <td class="shop"><a href="shoporder.html">&nbsp; &nbsp;&nbsp;&nbsp;商城订单</a></td>
+            </tr>
+            <tr>
+                <td class="waimai"><a href="order.html">&nbsp; &nbsp;&nbsp;&nbsp;外卖订单</a></td>
+            </tr>
+            <tr>
+                <td><h4><img src="images/left3.png"> 我的发布</h4></td>
+            </tr>
+            <tr>
+                <td><a href="comment.html">&nbsp; &nbsp;&nbsp;&nbsp;话题内容</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-right">
+        <br>
+        <table>
+            <tr>
+                <td><h4>&nbsp;&nbsp;&nbsp;&nbsp; 商城订单</h4></td>
+            </tr>           
+        </table>
+        <hr>
+        <div class="grey">
+            <table>
+                <tr>
+                    <td class="divcss-td-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下单时间</td>
+                    <td class="divcss-td-2">订单内容</td>
+                    <td class="divcss-td-3">支付金额</td>
+                    <td class="divcss-td-4">订单状态</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="orderlist">
+            <table>
+            <tr class="orderlist-tr-1">
+               <td class="orderlist-td-1"><br>2018年1月1日<br> 20:00:00 </td> 
+                <td class="orderlist-td-2"><br><a href=""><img src="images/order1.png"></a></td>
+                <td class="orderlist-td-3">订单号: 1228353728252990581 </td>
+                <td class="orderlist-td-4"><br>10.00 </td>
+                <td class="orderlist-td-5"><br>订单已完成</td>
+            </tr>
+            </table>
+            <HR style="border:3 double #987cb9" width="98%" color=#987cb9 SIZE=3>
+                 <table>
+            <tr class="orderlist-tr-1">
+               <td class="orderlist-td-1"><br>2018年1月1日<br> 20:00:00 </td> 
+                <td class="orderlist-td-2"><br><a href=""><img src="images/order1.png"></a></td>
+                <td class="orderlist-td-3">订单号: 1228353728252990581 </td>
+                <td class="orderlist-td-4"><br>10.00 </td>
+                <td class="orderlist-td-5"><br>订单已完成</td>
+            </tr>
+            </table>
+            <HR style="border:3 double #987cb9" width="98%" color=#987cb9 SIZE=3>
+           
+        </div>
+    </div>
+</div>
+<footer >
+    <div>
+        <ul class="footer-top">
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="privateorder.html">私人订制</a></li>
+            <li><a href="article.html">美食资讯</a></li>
+            <li><a href="shop_index.html">果蔬商城</a></li>
+            <li><a href="map.html">趣吃导航</a></li>
+            <li><a href="communities.html">美食分享</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="footer-body">
+            <li>
+                <span>电话:</span><span>8888-66666666</span>
+            </li>
+            <li>
+                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
+            </li>
+            <li>
+                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
+            </li>
+        </ul>
+        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
+
+    </div>
+    <div>
+
+</div>
+</footer>
+
+
+</body>
+<script src="js/jquery1-1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
+</html>

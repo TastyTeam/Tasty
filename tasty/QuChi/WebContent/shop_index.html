@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商城首页</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../../../pro2/default.css">
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" href="css/default.css">
+<style>
+    .header-nav{
+        background-color: black;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    #sub_menu_1,#sub_menu_2{ 
+        display: none; 
+    } 
+    .dropdown-menu{
+        text-align: center !important;
+    } 
+</style>
+</head>
+
+<body>
+    <!--一级导航-->
+        <div class="menu">
+                <header>
+                    <div class="header-nav">
+                        <div role="navigation">
+                            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
+                            <ul class="hd-nav">
+                                <li class="search-box-li">
+                                    <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
+                                            class="iconfont search-submit">&#xe617;</i></div>
+                                    <i class="search-exit"></i></li>
+                                
+               <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="privateorder.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="shop_index.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="map.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="communities.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                            </ul>
+                
+                            <div class="sec_menu">
+                            <ul>
+                                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
+                                <li><a>欢迎，</a></li>&nbsp;
+                                <li><a>用户名</a></li>&nbsp;
+                                <li onclick = "f('sub_menu_1')">
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-inverse dropdown-toggle btn-xs" data-toggle="dropdown" >
+                                        <span class="caret"></span>
+                                    </button>
+                                   
+                                    <ul class="dropdown-menu" role="menu" id="sub_menu_1">
+                            			<li class="sma-menu"><a href="self.html"><img src="images/menu11.png">个人中心</a></li><br>
+                            			<li><a href="comment.html"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
+                            			<li><a href="order.html"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
+                            			<li><a href="#"><img src="images/menu44.png">&nbsp;退出登录</a></li>
+                    				</ul>
+                                 
+                                    </div>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                       
+                        <div class="search-box">
+                            <form method="post" action="#" id="search-keyword">
+                                <input type="text" name="search-keyword" placeholder="请输入您的内容">
+                                <span>
+                                    </span>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+                </div>
+            </div>
+       <script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
+       
+        <!--二级导航-->
+
+         <div class="header-wrap">
+        <div class="navwrap">
+            <div id="nav">
+                <div class="my-product-navbar clearfix">
+                  <a class="current" href="shop_index.html">首页</a>
+                    <a href="products-list.html">家居</a>
+                    <a href="products-list.html">食材</a>
+                    <a href="products-list.html">电器</a>
+                    <a href="products-list.html">调味</a>
+                    <a href="products-list.html">新科技</a>
+                    <a href="products-list.html">品牌一览</a>
+                    <a href="products-list.html">折扣区<em class="sale"></em></a>
+                    <a id="cartforall" href="cart.html">购物车<img src=images/cart2.jpg></a>
+                </div>
+                                                            
+                <div class="pros subpage">
+                     <h2>厨卫商品分类</h2>
+                    <ul class="prosul clearfix" id="proinfo" style="display:block">
+                        <li>
+                            <h3>家居</h3>
+                            <a href="products-list.html">餐具</a>
+                            <a href="products-list.html">锅具</a>
+                            <a href="products-list.html">刀具</a>
+                            <div class="prosmore hide">
+                                <span><em><a href="products-list.html">餐具</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">锅具</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">刀具</a></em></span>
+                                <span><em><a href="products-list.html">茶具</a></em></span>
+                                <span><em><a href="products-list.html">清洁卫生</a></em></span>
+                                <span><em><a href="products-list.html">厨房配件</a></em></span>
+                               
+                            </div>
+                        </li>
+                        <li>
+                            <h3>食材</h3>
+                            <a href="products-list.html">蔬菜</a>
+                            <a href="products-list.html">水果</a>
+                            <div class="prosmore hide">
+                                <span><em><a href="products-list.html">蔬菜</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">水果</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">肉食</a></em></span>
+                                <span><em><a href="products-list.html">谷物</a></em></span>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>电器</h3>
+                            <a href="products-list.html">榨汁</a>
+                            <a href="products-list.html">搅拌</a>
+                            <a href="products-list.html">烘焙</a>
+                            <div class="prosmore hide">
+                                <span><em><a href="products-list.html">榨汁</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">搅拌</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">烘焙</a></em></span>
+                                <span><em><a href="products-list.html">常用电器</a></em></span>
+                              
+                            </div>
+                        </li>
+                        <li>
+                            <h3>调料</h3>
+                            <a href="products-list.html">西式调料</a>
+                            <a href="products-list.html">中式调料</a>
+                            <a href="products-list.html">单味调味品</a>
+                            <div class="prosmore hide">
+                                <span><em><a href="products-list.html">西式调料</a></em></span>
+                                <span><em><a href="products-list.html">中式调料</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="#">单味调味品</a></em></span>
+                                <span><em><a href="products-list.html">复合调味品</a></em></span>
+                                <span>    
+                            </div>
+                        </li>
+                        <li>
+                            <h3>新科技</h3>
+                            <a href="products-list.html">电动果蔬去皮器</a>
+                            <a href="products-list.html">智能洗碗机</a>
+                            <div class="prosmore hide">
+                                <span><em><a href="products-list.html">电动果蔬去皮器</a></em></span>
+                                <span><em><a href="products-list.html">智能洗碗机</a></em></span>
+                                <span><em><a href="products-list.html">厨房香水</a></em></span>
+                                <span><em class="morehot"><a class="morehot" href="products-list.html">不锈钢置物架</a></em></span>
+                                <span><em><a href="products-list.html">厨房音响</a></em></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--banner-->
+    <div id="banner">
+        <div class="fullSlide">
+            <div class="bd">
+                <ul>
+                <li _src="url(images/shopbanner4.jpg)" style="background:#fff center 0 no-repeat;"><a href="products-list.html"></a></li>
+                    <li _src="url(images/shopbanner.jpg)" style="background:#fff center 0 no-repeat;"><a href="products-list.html"></a></li>
+                    <li _src="url(images/shopbanner3.jpg)" style="background:#fff center 0 no-repeat;"><a href="products-list.html"></a></li>
+                    <li _src="url(images/shopbanner2.jpg)" style="background:#fff center 0 no-repeat;"><a href="products-list.html"></a></li>
+                </ul>
+            </div>
+            <div class="hd"><ul></ul></div>
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+    </div>
+    
+    <!--main-->
+    <div class="main">
+        <!--热门推荐-->
+        <div class="recommend">
+            <div class="title"><img src="images/rt.png" /><p>热门商品</p></div>
+            <div class="clr20"></div>
+            <div class="left">   
+                <div class="img"><a href="products-list.html"><img src="images/501.gif" width="619" height="309" /></a></div>
+                <div class="img img_309"><p><strong><a href="products-list.html">小兴安岭产新鲜蓝莓</a></strong><span>[99元/kg]</span></p><a href="#"><img src="images/502.jpg" width="220" height="220"/></a></div>
+                <div class="img"><a href="#"><img src="images/501.gif" width="619" height="309" /></a></div>
+                <div class="img img_309"><p><strong><a href="products-list.html">小兴安岭产新鲜蓝莓</a></strong><span>[99元/kg]</span></p><a href="#"><img src="images/502.jpg" width="220" height="220"/></a></div>                  
+            </div>
+            <div class="right">
+                <h2 style="line-height:30px;margin:10px;padding:10px;"><span>TOP 5</span>热销商品
+                </h2>
+                <ul class="board-list">
+                    <li>
+                        <span class="item-num top3">1</span>
+                        <span class="item-info">
+                            <span class="item-title"><a href="products-list.html">tomato</a></span>
+                            <span class="item-price">[9.9元/kg] </span>
+                        </span>
+                        <span class="item-thumb"><a href="products-list.html"><img src="images/01.jpg" width="70" height="70" /></a></span>
+                    </li>
+                    <li>
+                        <span class="item-num top3">2</span>
+                        <span class="item-info">
+                            <span class="item-title"><a href="products-list.html">苦瓜</a></span>
+                            <span class="item-price">[9.9元/kg] </span>
+                        </span>
+                        <span class="item-thumb"><a href="products-list.html"><img src="images/02.jpg" width="70" height="70" /></a></span>
+                    </li>
+                    <li>
+                        <span class="item-num top3">3</span>
+                        <span class="item-info">
+                            <span class="item-title"><a href="#">蓝莓</a></span>
+                            <span class="item-price">[9.9元/kg] </span>
+                        </span>
+                        <span class="item-thumb"><a href="products-list.html"><img src="images/502.jpg" width="70" height="70" /></a></span>
+                    </li>
+                    <li>
+                        <span class="item-num">4</span>
+                        <span class="item-info">
+                            <span class="item-title"><a href="products-list.html">辣椒</a></span>
+                            <span class="item-price">[9.9元/kg] </span>
+                        </span>
+                        <span class="item-thumb"><a href="#"><img src="images/04.jpg" width="70" height="70" /></a></span>
+                    </li>
+                    <li>
+                        <span class="item-num">5</span>
+                        <span class="item-info">
+                            <span class="item-title"><a href="products-list.html">土豆</a></span>
+                            <span class="item-price">[9.9元/kg]  </span>
+                        </span>
+                        <span class="item-thumb"><a href="#"><img src="images/05.jpg" width="70" height="70" /></a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--特价商品-->
+        <div class="list-title">
+            <p><strong style="border-bottom:solid 2px #dfdfdf;">特价商品</strong></p><a href="products-list.html">More</a>
+        </div>
+        <div class="list-div">
+            <ul>
+                <li>
+                    <label><a href="products-list.html">中式餐具 瓷碗</a></label>
+                    <cite>89元<del>109元</del></cite>
+                    <a href="#"><img src="images/401.jpg" width="220" height="220" /></a>
+                </li>
+                <li>
+                    <label><a href="products-list.html">中式餐具 瓷碗</a></label>
+                    <cite>89元<del>109元</del></cite>           
+                    <a href="#"><img src="images/401.jpg" width="220" height="220" /></a>
+                </li>
+                <li>
+                    <label><a href="products-list.html">中式餐具 瓷碗</a></label>
+                    <cite>89元<del>109元</del></cite>
+                    <a href="#"><img src="images/401.jpg" width="220" height="220" /></a>
+                </li>
+                <li>
+                    <label><a href="products-list.html">中式餐具 瓷碗</a></label>
+                    <cite>89元<del>109元</del></cite>
+                    <a href="#"><img src="images/401.jpg" width="220" height="220" /></a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    
+     <!--底部-->
+    <div class="footer">
+        <div class="footer-c">
+            <dl>
+                <dt>购买指南</dt>
+                <dd><a href="#">第一次购物体验</a></dd>
+                <dd><a href="#">品质保证原则</a></dd>
+                <dd><a href="#">会员申请条件</a></dd>
+            </dl>
+            <dl>
+                <dt>支付方式</dt>
+                <dd><a href="#">网银在线支付</a></dd>
+                <dd><a href="#">支付宝支付</a></dd>
+                <dd><a href="#">银联在线支付</a></dd>
+            </dl>
+            <dl>
+                <dt>配送方式</dt>
+                <dd><a href="#">配送方式</a></dd>
+            </dl>
+            <dl>
+                <dt>售后服务</dt>
+                <dd><a href="#">联系客服</a></dd>
+                <dd><a href="#">订单查询</a></dd>
+                <dd><a href="#">退换货流程及原则</a></dd>
+            </dl>
+            
+            <div class="col-contact">
+                <p class="phone">400-100-5678</p>
+                <p>周一至周日 8:00-18:00<br />（仅收市话费）</p>
+                <input type="button" value="在线客户" />
+            </div>
+            <div class="clr20"></div>
+        </div>
+    </div> 
+    <!--footer-->
+    <footer >
+    <div>
+        <ul class="footer-top">
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="privateorder.html">私人订制</a></li>
+            <li><a href="article.html">美食资讯</a></li>
+            <li><a href="shop_index.html">果蔬商城</a></li>
+            <li><a href="map.html">趣吃导航</a></li>
+            <li><a href="communities.html">美食分享</a></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="footer-body">
+            <li>
+                <span>电话:</span><span>8888-66666666</span>
+            </li>
+            <li>
+                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
+            </li>
+            <li>
+                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
+            </li>
+        </ul>
+        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
+
+    </div>
+    <div>
+
+</div>
+</footer>
+
+
+</body>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+<!--banner特效-->
+    $(".fullSlide").hover(function(){
+        $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+    },
+    function(){
+        $(this).find(".prev,.next").fadeOut()
+    });
+    $(".fullSlide").slide({
+        titCell: ".hd ul",
+        mainCell: ".bd ul",
+        effect: "fold",
+        autoPlay: true,
+        autoPage: true,
+        trigger: "click",
+        startFun: function(i) {
+            var curLi = jQuery(".fullSlide .bd li").eq(i);
+            if ( !! curLi.attr("_src")) {
+                curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+            }
+        }
+});
+
+    //导航条按钮
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
+</html>

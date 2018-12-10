@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>购物车</title>
+   <link href="css/base.css" rel="stylesheet" type="text/css" />
+   <link href="css/index.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="../../../pro2/default.css">
+   <link rel="stylesheet" type="text/css" href="css/button.css">
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+   <link rel="stylesheet" href="cart/css/bootstrap.min.css">   
+   <link rel="stylesheet" href="cart/css/font-awesome.min.css">
+   <link rel="stylesheet" href="cart/css/bundle.css">
+   <link rel="stylesheet" href="cart/css/style.css">
+   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <meta charset="utf-8">
+   <meta name="format-detection" content="telephone=no">
+   <meta name="renderer" content="webkit">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Cache-Control" content="no-siteapp" />
+   <link rel="stylesheet" href="default.css">
+   <style>
+    .header-nav{
+        background-color: black;
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    #sub_menu_1,#sub_menu_2{ 
+        display: none; 
+    } 
+    .dropdown-menu{
+        text-align: center !important;
+    } 
+</style>
+</head>
+<body>
+    <!--banner-->
+    <div class="menu">
+        <header>
+            <div class="header-nav">
+                <div role="navigation">
+                    <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
+                    <ul class="hd-nav">
+                        <li class="search-box-li">
+                            <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
+                                class="iconfont search-submit">&#xe617;</i></div>
+                                <i class="search-exit"></i></li>
+                               <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="privateorder.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="shop_index.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="map.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="communities.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                            </ul>
+
+                            <div class="sec_menu">
+                                <ul>
+                                    <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
+                                    <li><a>欢迎，</a></li>&nbsp;
+                                    <li><a>用户名</a></li>&nbsp;
+                                    <li onclick = "f('sub_menu_1')">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-inverse dropdown-toggle btn-xs" data-toggle="dropdown" >
+                                                <span class="caret"></span>
+                                            </button>
+
+                                            <ul class="dropdown-menu" role="menu" id="sub_menu_1">
+                            					<li class="sma-menu"><a href="self.html"><img src="images/menu11.png">个人中心</a></li><br>
+                           						<li><a href="comment.html"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
+                            					<li><a href="order.html"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
+                            					<li><a href="#"><img src="images/menu44.png">&nbsp;退出登录</a></li>
+                    						</ul>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="search-box">
+                            <form method="post" action="#" id="search-keyword">
+                                <input type="text" name="search-keyword" placeholder="请输入您的内容">
+                                <span>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </header>
+            </div>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
+
+            <!--main-->
+
+            <div class="main" id="my-add">
+                <!--热门推荐-->
+                <div class="recommend">
+                    <div class="title"><img src="images/rt.png" /><p>购物车</p></div>
+                    <div class="clr20"></div>
+                    <!-- shopping-cart-area start -->
+        <div class="cart-area ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12
+                    col-xs-12">
+                    <form action="#">
+                        <div class="table-content
+                        table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th
+                                    class="product-price">图片</th>
+                                    <th
+                                    class="product-name">名称</th>
+                                    <th
+                                    class="product-price">价格</th>
+                                    <th
+                                    class="product-quantity">数量</th>
+                                    <th
+                                    class="product-subtotal">总数</th>
+                                    <th
+                                    class="product-name">移除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td
+                                    class="product-thumbnail">
+                                    <a href="#"><img
+                                        src="images/999.jpg"
+                                        alt=""></a>
+                                    </td>
+                                    <td
+                                    class="product-name"><a
+                                    href="#">Headphone</a></td>
+                                    <td
+                                    class="product-price"><span
+                                    class="amount">$165.00</span></td>
+                                    <td
+                                    class="product-quantity">
+                                    <input value="1"
+                                    type="number">
+                                </td>
+                                <td
+                                class="product-subtotal">$165.00</td>
+                                <td
+                                class="product-remove"><a
+                                href="#"><i
+                                class="fa
+                                fa-times"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td
+                                class="product-thumbnail">
+                                <a href="#"><img
+                                    src="images/998.jpg"
+                                    alt=""></a>
+                                </td>
+                                <td
+                                class="product-name"><a
+                                href="#">Table lamp</a></td>
+                                <td
+                                class="product-price"><span
+                                class="amount">$150.00</span></td>
+                                <td
+                                class="product-quantity">
+                                <input value="1"
+                                type="number">
+                            </td>
+                            <td
+                            class="product-subtotal">$150.00</td>
+                            <td
+                            class="product-remove"><a
+                            href="#"><i
+                            class="fa
+                            fa-times"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>             
+
+
+<div class="col-md-5 col-sm-12 col-xs-12">
+<div class="cart-total">
+        <ul>
+            <li>价格<span>$315.00</span></li>
+            <li class="cart-black">总计<span>$315.00</span></li>
+        </ul>
+        <div class="cart-total-btn">
+            <div class="cart-total-btn1 f-left">
+                <a href="#">结算</a>
+            </div>
+            <div class="cart-total-btn2 f-right">
+                <a href="#">继续购物</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+                </div>
+
+            </div>
+
+            <!------底部-------->
+            <div class="footer">
+                <div class="footer-c">
+                    <dl>
+                        <dt>购买指南</dt>
+                        <dd><a href="#">第一次购物体验</a></dd>
+                        <dd><a href="#">品质保证原则</a></dd>
+                        <dd><a href="#">会员申请条件</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>支付方式</dt>
+                        <dd><a href="#">网银在线支付</a></dd>
+                        <dd><a href="#">支付宝支付</a></dd>
+                        <dd><a href="#">银联在线支付</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>配送方式</dt>
+                        <dd><a href="#">配送方式</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd><a href="#">联系客服</a></dd>
+                        <dd><a href="#">订单查询</a></dd>
+                        <dd><a href="#">退换货流程及原则</a></dd>
+                    </dl>
+
+                    <div class="col-contact">
+                        <p class="phone">400-100-5678</p>
+                        <p>周一至周日 8:00-18:00<br />（仅收市话费）</p>
+                        <input type="button" value="在线客户" />
+                    </div>
+                    <div class="clr20"></div>
+                    <div class="footer-b">
+                        <p><a href="#">关于我们</a>  |  <a href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-11895250131.3.YOZUX7&id=521741523734">手机商城</a>  |  <a href="#">联系我们</a></p>
+                        <p>2013 © DEHUA.com,All Rights Reserver. cz科技 版权所有　　网站备案号：闽ICP备0000号-1</p>
+                    </div>
+                </div>
+            </div> 
+        </body>
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            /*banner特效-*/
+            $(".fullSlide").hover(function(){
+                $(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+            },
+            function(){
+                $(this).find(".prev,.next").fadeOut()
+            });
+            $(".fullSlide").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                effect: "fold",
+                autoPlay: true,
+                autoPage: true,
+                trigger: "click",
+                startFun: function(i) {
+                    var curLi = jQuery(".fullSlide .bd li").eq(i);
+                    if ( !! curLi.attr("_src")) {
+                        curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+                    }
+                }
+            });
+        </script>      
+        <!--登录按钮-->
+        <script src="lib/jquery/jquery.js"></script>
+        <script src="lib/bootstrap/bootstrap.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript"> 
+           function f(str){ 
+            var sub_menu = document.getElementById(str); 
+            var dis_v = sub_menu.style.display; 
+
+            if(dis_v == "block") 
+              sub_menu.style.display = "none"; 
+          else 
+              sub_menu.style.display = "block"; 
+
+      } 
+
+  </script>
+  </html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>登录</title>
+
+<script type="text/javascript" src="js/login.js"></script>
+</head>
+
+  <body>
+    <div class="box">
+      
+      <div class="container">
+        <img src="images/logo1.png" class="logo">
+        <form class="form-signin" style="width:25%;">
+          <input type="text" maxlength="11" id="iphone" class="form-control" placeholder="手机号" autofocus style="margin-bottom: 20px">
+          <input type="password" maxlength="20" id="pwd" class="form-control" placeholder="密码" style="margin-bottom: 20px">
+
+          <input type="text" maxlength="4" id="yanzm" class="form-control" placeholder="验证码" style="width:35%;vertical-align:middle;margin-top:10px;">
+          <img src="images/yzm.png" class="yzm"/>
+          <div style="margin:-10px 0px 0px;"><a href="forgetPwd.html" class="wangjimima">忘记密码?</a></div>
+          <input class="btn btn-lg btn-primary btn-block" type="submit" value="登录">
+          
+          <div id="myAlert2" class="alert alert-warning" style="text-align:left;margin-top: 0px;">
+              <a href="#" class="close" data-dismiss="alert">&times;</a>
+              <strong>警告！</strong><sapn id="tip">sdfsdfdssf</sapn>
+          </div>
+        </form>
+      </div>
+    </div>  
+    <!-- <script src="js/jquery.js"></script>    
+		<script src="js/bootstrap.min.js"></script> -->
+  </body>
+</html>
