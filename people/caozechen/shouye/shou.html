@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>趣吃</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="default.css">
+   <link rel="stylesheet" href="default.min.css">
+</head>
+<body>
+	
+<div class="zheng">
+		<!--img src="images/logo.jpg"  class="logo">
+		<img src="images/people.jpg"  class="people">
+		<span class="shang">趣吃</span-->
+	<div class="searchbox">
+    <div class="mod_select">
+        <div class="select_box">
+            <span class="select_txt">石家庄</span>          
+        </div>
+    </div>
+    <form action="" >
+        <input type="hidden" name="" value="服装" id="select_value">
+        <input type="text" name="" id="searchPlaceholder" class="import" placeholder="请输入地址名称">
+        <input type="submit" value="搜   索" class="btn-search">
+    </form>
+  </div>
+</div>
+       	<div class="f">
+            <a href="index.html">网站首页&nbsp;</a>
+            <a href="productlist.html">私人订制</a>
+            <a href="article.html">美食资讯</a>
+            <a href="contact.html">果蔬商城</a>
+            <a href="about.html">趣吃导航</a>
+            <a href="about.html">美食分享</a>
+    </div>
+    <hr/>
+<div class="footer-body">
+                <span>电话:</span><span>8888-66666666</span>
+   
+                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
+            
+                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
+            
+        		<p>designed and developed with by Daye Aladdin Technology Co., Ltd.</p>
+
+    </div>
+<script src="js/jquery.min.js"></script>
+  <script>
+    $(function(){
+        $(".select_box").click(function(event){   
+            event.stopPropagation();
+            $(this).find(".option").toggle();
+            $(this).parent().siblings().find(".option").hide();
+        });
+        $(document).click(function(event){
+            var eo=$(event.target);
+            if($(".select_box").is(":visible") && eo.attr("class")!="option" && !eo.parent(".option").length)
+            $('.option').hide();                                    
+        });
+        $(".option li").click(function(){
+            var check_value=$(this).text();
+            var zlValue = $('.option li:eq(1)').html();
+            var bqValue = $('.option li:eq(2)').html();
+            $(this).parent().siblings(".select_txt").text(check_value);
+            $("#select_value").val(check_value);
+            if(check_value == zlValue) {
+                $('#searchPlaceholder').prop('placeholder','请输入电器名称');
+            }else if(check_value == bqValue) {
+                $('#searchPlaceholder').prop('placeholder','请输入家用名称');
+            }else {
+                $('#searchPlaceholder').prop('placeholder','请输入地址名称');
+            }
+        });
+    })
+  </script>
+</body>
+</html>
