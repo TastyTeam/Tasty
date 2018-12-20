@@ -82,83 +82,7 @@
 <body>
 
 	<header>
-		<div class="header-nav">
-			<div role="navigation">
-				<a href="#" rel="home" class="hd-logo" title="美食餐厅"><img
-					src="images/logo2.png"></a>
-				<ul class="hd-nav">
-					<li class="search-box-li">
-						<div>
-							<input type="text" name="search-keyword" placeholder="输入关键词"
-								form="search-keyword"><i class="iconfont search-submit">&#xe617;</i>
-						</div> <i class="search-exit"></i>
-					</li>
-					<li><a href="index.html" name="index">网站首页<span><i
-								class="iconfont ">&#xe6aa;</i></span></a></li>
-					<li><a href="privateorder.html" name="productlist">私人订制<span><i
-								class="iconfont ">&#xe6aa;</i></span></a></li>
-					<li><a href="article.html" name="article">美食资讯<span><i
-								class="iconfont ">&#xe6aa;</i></span></a></li>
-					<li><a href="shop_index.html" name="contact">果蔬商城<span><i
-								class="iconfont ">&#xe6aa;</i></span></a></li>
-					<li><a href="map.html" name="about">趣吃导航<span><i
-								class="iconfont ">&#xe6aa;</i></span></a></li>
-					<li><a href="communities.html" name="about">美食分享<span><i
-								class="iconfont ">&#xe6aa;</i></span></a></li>
-				</ul>
-
-
-				<div class="sec_menu">
-					<ul>
-						<li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-						<li><a>欢迎，</a></li>&nbsp;
-						<li><a>用户名</a></li>&nbsp;
-						<li onclick="f('sub_menu_1')">
-							<div class="btn-group">
-								<button type="button"
-									class="btn btn-inverse dropdown-toggle btn-xs"
-									data-toggle="dropdown">
-									<span class="caret"></span>
-								</button>
-
-								<ul class="dropdown-menu" role="menu" id="sub_menu_1">
-									<li class="sma-menu"><a href="self.html"><img
-											src="images/menu11.png">个人中心</a></li>
-									<br>
-									<li><a href="comment.html"><img
-											src="images/menu22.png">&nbsp;我的评论</a></li>
-									<br>
-									<li><a href="order.html"><img src="images/menu33.png">&nbsp;我的订单</a></li>
-									<br>
-									<li><a href="#"><img src="images/menu44.png">&nbsp;退出登录</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="search-box">
-				<form method="post" action="#" id="search-keyword">
-					<input type="text" name="search-keyword" placeholder="请输入您的内容">
-					<span> </span>
-				</form>
-			</div>
-		</div>
-		<script src="js/jquery1-1.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript">
-			function f(str) {
-				var sub_menu = document.getElementById(str);
-				var dis_v = sub_menu.style.display;
-
-				if (dis_v == "block")
-					sub_menu.style.display = "none";
-				else
-					sub_menu.style.display = "block";
-			}
-		</script>
+		<jsp:include page="head.jsp" />
 	</header>
 
 	<div class="wrap" style="position: relative; top: 80px;">
@@ -263,7 +187,7 @@
 								 alert(mystargrade+"评价成功"); 
 				            	params="stargrade="+mystargrade;
 				            	 $.get(url,params,function(d){
-				            		alert("评价成功");
+				            		
 				            	}) 
 							})						
 						})	

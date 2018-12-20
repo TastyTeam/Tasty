@@ -29,6 +29,7 @@ public class OrderContentController {
 	private OrderContentServiceImpl orderContentServiceImpl;
 	@Resource
 	public OrderContentSetCountService ordercontentsetcountservice;
+	
 	@RequestMapping("/ordercontent")
 	public String getorder(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		HttpSession session=request.getSession();
@@ -46,6 +47,7 @@ public class OrderContentController {
 				int foodprice=c.getFastfood().getFastfoodPrice();
 				price=foodcount*foodprice+price;
 			}
+			ordercontentsetcountservice.setshoppingfee(price, orderuuid);
 			//request.setAttribute("count", );
 			//ordercontent界面右侧获取内容
 			request.setAttribute("orderuu", orderContentServiceImpl.getmyorder(orderuuid));

@@ -102,53 +102,7 @@ function password(password){
 <body style="height: 100%;">
 <!-- ======================================导航栏====================================== -->
 <header>
-    <div class="header-nav">
-        <div role="navigation">
-            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
-            <ul class="hd-nav">
-                <li class="search-box-li">
-                    <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
-                            class="iconfont search-submit">&#xe617;</i></div>
-                    <i class="search-exit"></i></li>
-                <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="privateorder.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="shop_index.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="map.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="communities.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-            </ul>
-
-            <div class="sec_menu">
-            <ul>
-                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-                <li><a>欢迎，</a></li>&nbsp;
-                <li><a>用户名</a></li>&nbsp;
-                <li onclick = "f('sub_menu_1')">
-                    <div class="btn-group">
-                    <button type="button" class="btn btn-inverse dropdown-toggle btn-xs" data-toggle="dropdown" >
-                        <span class="caret"></span>
-                    </button>
-                   
-                    <ul class="dropdown-menu" role="menu" id="sub_menu_1">
-                            			<li class="sma-menu"><a href="self.html"><img src="images/menu11.png">个人中心</a></li><br>
-                            			<li><a href="comment.html"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
-                            			<li><a href="order.html"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
-                            			<li><a href="#"><img src="images/menu44.png">&nbsp;退出登录</a></li>
-                    				</ul>
-                    </div>
-                </li>
-            </ul>
-            </div>
-        </div>
-       
-        <div class="search-box">
-            <form method="post" action="#" id="search-keyword">
-                <input type="text" name="search-keyword" placeholder="请输入您的内容">
-                <span>
-                    </span>
-            </form>
-        </div>
-    </div>
+    <jsp:include page="head.jsp" />
 </header>
 <!-- ==========================================================左侧菜单========================================== -->
 <div class="main">
@@ -158,22 +112,22 @@ function password(password){
                    <td><h4><img src="images/left1.png">我的资料</h4></td>
                 </tr>
                 <tr>
-                    <td class="self"><a href="self.html">&nbsp; &nbsp;&nbsp;&nbsp;个人中心</a></td>
+                    <td class="self"><a href="self">&nbsp; &nbsp;&nbsp;&nbsp;个人中心</a></td>
                 </tr>
                 <tr>
                     <td><h4><img src="images/left2.png">我的订单</h4></td>
                 </tr>
                 <tr>
-                    <td><a href="shoporder.html">&nbsp; &nbsp;&nbsp;&nbsp;商城订单</a></td>
+                    <td><a href="">&nbsp; &nbsp;&nbsp;&nbsp;商城订单</a></td>
                 </tr>
                 <tr>
-                    <td><a href="order.html">&nbsp; &nbsp;&nbsp;&nbsp;外卖订单</a></td>
+                    <td><a href="myorder">&nbsp; &nbsp;&nbsp;&nbsp;外卖订单</a></td>
                 </tr>
                 <tr>
                     <td><h4><img src="images/left3.png"> 我的发布</h4></td>
                 </tr>
                 <tr>
-                    <td><a href="comment.html">&nbsp; &nbsp;&nbsp;&nbsp;话题内容</a></td>
+                    <td><a href="comment">&nbsp; &nbsp;&nbsp;&nbsp;话题内容</a></td>
                 </tr>
             </table>
         </div>
@@ -418,36 +372,7 @@ function password(password){
             </div>
     </div>
 
-    <footer >
-    <div>
-        <ul class="footer-top">
-            <li><a href="index.html">网站首页</a></li>
-            <li><a href="privateorder.html">私人订制</a></li>
-            <li><a href="article.html">美食资讯</a></li>
-            <li><a href="shop_index.html">果蔬商城</a></li>
-            <li><a href="map.html">趣吃导航</a></li>
-            <li><a href="communities.html">美食分享</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul class="footer-body">
-            <li>
-                <span>电话:</span><span>8888-66666666</span>
-            </li>
-            <li>
-                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
-            </li>
-            <li>
-                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
-            </li>
-        </ul>
-        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
-
-    </div>
-    <div>
-
-</div>
-</footer>
+     <jsp:include page="footer.jsp"></jsp:include>
 </body>
 <script src="js/jquery1-1.js"></script>
 <script src="js/bootstrap.min.js"></script>

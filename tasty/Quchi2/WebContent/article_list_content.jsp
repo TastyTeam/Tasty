@@ -27,41 +27,7 @@
 <body>
 
 <header>
-    <div class="header-nav">
-        <div role="navigation">
-            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
-            <ul class="hd-nav">
-                <li class="search-box-li">
-                    <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
-                            class="iconfont search-submit">&#xe617;</i></div>
-                    <i class="search-exit"></i></li>
-                <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="privateorder.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="shop_index.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="map.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="communities.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-            </ul>
-
-            <div class="motai"></div>
-            <ul>
-                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-                <li><a>中文</a></li>
-                <li><a>En</a></li>
-                <li><a><i class="iconfont nav-bottom">&#xe61f;</i></a></li>
-            </ul>
-
-        </div>
-        <div class="search-box">
-            <form method="post" action="#" id="search-keyword">
-                <input type="text" name="search-keyword" placeholder="请输入您的内容">
-                <span>
-                    </span>
-            </form>
-
-        </div>
-
-    </div>
+<jsp:include page="head.jsp" />
 
     <div class="header-carousel container">
 
@@ -128,44 +94,15 @@
             
         </article>
         <footer class="article-footer-btn">
-            <a>上一篇</a>
-            <a>下一篇</a>
+<!--             <a>上一篇</a>
+            <a>下一篇</a> -->
         </footer>
     </div>
 </main>
 
 
     <!--footer-->
-    <footer >
-    <div>
-        <ul class="footer-top">
-            <li><a href="index.html">网站首页</a></li>
-            <li><a href="privateorder.html">私人订制</a></li>
-            <li><a href="article.html">美食资讯</a></li>
-            <li><a href="shop_index.html">果蔬商城</a></li>
-            <li><a href="map.html">趣吃导航</a></li>
-            <li><a href="communities.html">美食分享</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul class="footer-body">
-            <li>
-                <span>电话:</span><span>8888-66666666</span>
-            </li>
-            <li>
-                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
-            </li>
-            <li>
-                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
-            </li>
-        </ul>
-        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
-
-    </div>
-    <div>
-
-</div>
-</footer>
+   <jsp:include page="footer.jsp"></jsp:include>
 
 
 <script>

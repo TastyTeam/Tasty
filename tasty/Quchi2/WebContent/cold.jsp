@@ -292,36 +292,7 @@ var dragImgUpload = new DragImgUpload("#drop_area",{
 	})
 </script>
     <!--footer-->
-    <footer >
-    <div>
-        <ul class="footer-top">
-            <li><a href="index.html">网站首页</a></li>
-            <li><a href="privateorder.html">私人订制</a></li>
-            <li><a href="article.html">美食资讯</a></li>
-            <li><a href="shop_index.html">果蔬商城</a></li>
-            <li><a href="map.html">趣吃导航</a></li>
-            <li><a href="communities.html">美食分享</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul class="footer-body">
-            <li>
-                <span>电话:</span><span>8888-66666666</span>
-            </li>
-            <li>
-                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
-            </li>
-            <li>
-                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
-            </li>
-        </ul>
-        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
-
-    </div>
-    <div>
-
-</div>
-</footer>
+    <jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

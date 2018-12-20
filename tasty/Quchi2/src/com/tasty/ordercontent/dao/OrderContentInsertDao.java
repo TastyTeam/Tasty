@@ -46,5 +46,12 @@ public class OrderContentInsertDao {
 		q.setInteger(2, fastfoodId);
 		q.executeUpdate();
 	}
+	public void setprice(int price, String orderuuid) {
+		Session session =this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("update MyOrder mo set mo.shoppingFee=? where mo.orderuuid=?");
+		q.setInteger(0, price);
+		q.setString(1, orderuuid);
+		q.executeUpdate();		
+	}
 
 }

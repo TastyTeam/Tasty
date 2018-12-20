@@ -24,9 +24,11 @@ public class MapDishesController {
 	@Resource
 	private MapDishesServiceImpl mapdishesserviceimpl;
 	@RequestMapping("/mapdishes")
-	public String queryRestaurant(@RequestParam("shopId")int shopId,HttpServletRequest request) {
+	public String queryRestaurant(HttpServletRequest request) {
+		String shopid=request.getParameter("shopid");
+		int shopId=Integer.parseInt(shopid);
 		//创建session---董莹
-		HttpSession session=request.getSession();
+		/*HttpSession session=request.getSession();
 		Object obj=session.getAttribute("shopId");
 		int shopId1;
 		if (obj==null) {
@@ -34,19 +36,20 @@ public class MapDishesController {
 		} else {
 			shopId1=(Integer)obj;
 		}
-		session.setAttribute("shopId", shopId1);
+		session.setAttribute("shopId", shopId1);*/
+		/*int shopId=Integer.parseInt(request.getParameter("shopid"));
+		*/
+		
 		//查询餐厅的信息
 		Restaurant restaurant=mapdishesserviceimpl.queryRestaurant(shopId);
 		request.getServletContext().setAttribute("restaurant", restaurant);
 		
 		//查询菜品的类型
-		List <Dishes> dishtypelist=mapdishesserviceimpl.queryDishTypeList();
+		List <Dishes> dishtypelist=mapdishesserviceimpl.queryDishTypeList(shopId);
 		request.getServletContext().setAttribute("dishtypelist",dishtypelist);
 		System.out.println(dishtypelist.size());
 		
-	   //查询商家的菜
-			List <FastFood> fastfood=mapdishesserviceimpl.queryFastFoodList(1);
-			request.getServletContext().setAttribute("fastfood",fastfood);
+	  
 			return "single";
 			
 		}

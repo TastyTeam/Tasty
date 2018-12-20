@@ -36,26 +36,17 @@ public class MapDishesDaoImpl {
 		return restaurant;
 	}
 	/**
+	 * @param shopId 
 	 * @desc用于查询一个商家菜品的所有类型
 	 * @param 
 	 */
-	public List<Dishes> findRestaurantDishesType() {
+	public List<Dishes> findRestaurantDishesType(int shopId) {
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from Dishes");
+		Query q=session.createQuery("from Dishes ds where ds.restaurant.shopId=?");
+		q.setInteger(0, shopId);
 		List<Dishes> mapdisheslist=q.list();
 
 		return mapdisheslist;
 	}
-	/**
-	 * @desc用于查询一个商家所以菜品
-	 * @param key  类型的主键
-	 */
-	public List<FastFood> listFastFood(int key) {
-		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from FastFood");
 	
-		List<FastFood> fastfood=(List<FastFood>)q.list();
-
-		return fastfood;
-	}
 }

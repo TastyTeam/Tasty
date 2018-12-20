@@ -80,7 +80,7 @@
          </ul>
         </div>
     </div>
-
+<c:if test="${not empty indexfood }">
     <div>
         <div class="main-head">
             <p>
@@ -88,8 +88,8 @@
             </p>
         </div>
     </div>
-</main>
-<main>
+<!-- </main>
+<main> -->
     <div class="aui-nav-content-box">
         <!-- <div class="aui-nav-list-box">
                 <ul class="main-submenu">
@@ -161,13 +161,9 @@
                 </div> 
         </div>
     </div> 
-                                    
-                                     
-
-
-        
-                        <a class="more" href="privateorder.html">MORE</a>
-    </div>
+     
+                        <a class="more" href="privateorder">MORE</a>
+    </div></c:if>
 </main>
 <main>
     <div>
@@ -176,27 +172,20 @@
         </div>
     </div>
     <ul class="main-submenu main-submenu-second">
-        <li><a href="#">最新新闻</a></li>
-        <li><a href="#">餐厅新闻</a></li>
-        <li><a href="#">美食热闻</a></li>
-        <li><a href="#">甜品站</a></li>
+    <c:forEach items="${articletype}" var="onearticle">
+    <li><a href="#">${onearticle.articleTypeName}</a></li>
+    </c:forEach>
+        
+      
     </ul>
     <ul class="main-submenu-info ">
-        <li><a href="#">
-            <div class="activity-duration">
-                <img  src="images/activity-duration.png">
-                <p>6-1日</p>
-            </div>
-            <img src="images/foodnewlist1.jpg">
-            <h1 class="food-head">周末轻松制作美味甜品</h1>
-            <p class="food-info">每个周末都抽出一个小时的时间来为自己做一份甜品，让周末的休闲充满制作甜蜜和品尝甜蜜的快乐。</p>
-        </a></li>
+        
         <li><a href="#">
             <div class="activity-duration">
                 <img src="images/activity-duration.png">
                 <p>6-1日</p>
             </div>
-            <img  src="images/foodnewlist1.jpg">
+            <img src="images/foodnewlist1.jpg">
             <h1 class="food-head">周末轻松制作美味甜品</h1>
             <p class="food-info">每个周末都抽出一个小时的时间来为自己做一份甜品，让周末的休闲充满制作甜蜜和品尝甜蜜的快乐。</p>
         </a></li>
@@ -209,9 +198,21 @@
             <h1 class="food-head">周末轻松制作美味甜品</h1>
             <p class="food-info">每个周末都抽出一个小时的时间来为自己做一份甜品，让周末的休闲充满制作甜蜜和品尝甜蜜的快乐。</p>
         </a></li>
+        <li><a href="#">
+            <div class="activity-duration">
+                <img src="images/activity-duration.png">
+                <p>6-1日</p>
+            </div>
+            <img src="images/foodnewlist1.jpg">
+            <h1 class="food-head">周末轻松制作美味甜品</h1>
+            <p class="food-info">每个周末都抽出一个小时的时间来为自己做一份甜品，让周末的休闲充满制作甜蜜和品尝甜蜜的快乐。</p>
+        </a></li>
+   
+    
+       
 
     </ul>
-    <a class="more" href="article.html">MORE</a>
+    <a class="more" href="article">MORE</a>
 </main>
 <main>
 
@@ -219,38 +220,8 @@
 
 <br>
 <br>
-    <!--footer-->
-    <footer >
-    <div>
-        <ul class="footer-top">
-            <li><a href="index.html">网站首页</a></li>
-            <li><a href="privateorder.html">私人订制</a></li>
-            <li><a href="article.html">美食资讯</a></li>
-            <li><a href="shop_index.html">果蔬商城</a></li>
-            <li><a href="map.html">趣吃导航</a></li>
-            <li><a href="communities.html">美食分享</a></li>
-        </ul>
-    </div>
-    <div>
-        <ul class="footer-body">
-            <li>
-                <span>电话:</span><span>8888-66666666</span>
-            </li>
-            <li>
-                <span>邮箱:</span><span>quchi@chaoyuezu.com</span>
-            </li>
-            <li>
-                <span>地址:</span><span>河北省石家庄市河北师范大学</span>
-            </li>
-        </ul>
-        <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
 
-    </div>
-    <div>
-
-</div>
-</footer>
-
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 

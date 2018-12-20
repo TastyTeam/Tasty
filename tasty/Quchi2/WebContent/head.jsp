@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+·<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -49,7 +49,7 @@
 } 
 </style>
 </head>
-<body style="height: 100%;">
+
 
 
     <div class="header-nav">
@@ -63,8 +63,8 @@
                 <li><a href="index.jsp" name="index">${lists.get(0).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="privateorder" name="productlist">${lists.get(1).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="article" name="article">${lists.get(2).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="shop_index.jsp" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="map.jsp" name="about">${lists.get(4).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="shop_index.html" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="map" name="about">${lists.get(4).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="communities?pageNum=1" name="about">${lists.get(5).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
             </ul>
 
@@ -91,7 +91,7 @@
                                    
                                     <ul class="dropdown-menu" role="menu" id="sub_menu_1">
                             			<li class="sma-menu"><a href="self"><img src="images/menu11.png">个人中心</a></li><br>
-                            			<li><a href="comment.jsp"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
+                            			<li><a href="comment"><img src="images/menu22.png">&nbsp;我的发布</a></li><br>
                             			<li><a href="myorder"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
                             			<li><a href="SingOut"><img src="images/menu44.png">&nbsp;退出登录</a></li>
                     				</ul>
@@ -116,4 +116,3 @@
 
     
 
-</body>

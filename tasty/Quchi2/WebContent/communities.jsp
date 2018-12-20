@@ -55,7 +55,7 @@ content="汇聚千万美食爱好者的原创社区，创建属于自己的美�
 					<li>
 							<div class="u">
 								<a target="_blank"><img width="40" height="40"
-									class="imgLoad" src="images/1.png"></a>
+									class="imgLoad" src="images/img.jpg"></a>
 								<div>
 									<a class="t" target="_blank">${onearticle.user.userName}</a> <span>${onearticle.time}</span>
 								</div>
@@ -117,8 +117,8 @@ content="汇聚千万美食爱好者的原创社区，创建属于自己的美�
 						 <c:forEach  items="${hotarticle}" var="onehotarticle">
 						<li>
 							<p>
-								<a href="###" title="ACA/北美电器 AHM-P125A手持搅拌器电动打蛋器"
-									target="_blank" style="font-size: 14px; color: #000;">${onehotarticle.content }</a>
+								<a href="remark?id=${onehotarticle.communityid}" title="本期热点新闻"
+									target="_blank" style="font-size: 12px; color: #000;">${onehotarticle.content }</a>
 							</p>
 						</li>
 						</c:forEach> 
@@ -134,7 +134,7 @@ content="汇聚千万美食爱好者的原创社区，创建属于自己的美�
 		</div>
 	</div>
 
-	<footer style="position: relative; top: 1930px;">
+	<!-- <footer style="position: relative; top: 1930px;">
 		<div>
 			<ul class="footer-top">
 				<li><a href="index.html">网站首页</a></li>
@@ -157,7 +157,7 @@ content="汇聚千万美食爱好者的原创社区，创建属于自己的美�
 		</div>
 		<div></div>
 
-	</footer>
+	</footer> -->
 
 
 	<style type="text/css">

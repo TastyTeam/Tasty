@@ -29,12 +29,13 @@ public class MapDishesServiceImpl {
 		return mapdishesdaoimpl.findRestaurant(shopId);
 	}
 	/**
+	 * @param shopId 
 	 * @desc用于查询一个商家菜品的所有类型
 	 * @param 
 	 */
-	public List<Dishes> queryDishTypeList() {
+	public List<Dishes> queryDishTypeList(int shopId) {
 		
-		List<Dishes> mapdisheslis=mapdishesdaoimpl.findRestaurantDishesType();
+		List<Dishes> mapdisheslis=mapdishesdaoimpl.findRestaurantDishesType(shopId);
 		return mapdisheslis;
 	}
 	/**

@@ -22,7 +22,7 @@ public class CommunitiesDaoImpl {
 	public List<Community> queryCommunitesMessage(int pageNum,int pageSize) {
 		// 寮�濮嬫煡璇㈡墍鏈夋枃绔�
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from Community ");
+		Query q=session.createQuery("from Community c order by c.communityid desc");
 		//浠庣x鏉″紑濮�
 		q.setFirstResult((pageNum-1)*pageSize);       
 		//姣忛〉鍙栧嚭n鏉�  

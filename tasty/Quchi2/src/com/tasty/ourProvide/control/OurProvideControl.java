@@ -12,9 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.tasty.entity.Cart;
+import com.tasty.entity.ArticleType;
 import com.tasty.entity.Food;
 import com.tasty.entity.Navigation;
 import com.tasty.entity.OurProvide;
@@ -75,8 +74,14 @@ public class OurProvideControl {
 					
 				}
 					
-				
-				
-		return "main";
+				/**
+				 * @date 12.18
+				 * @author 王玉玲
+				 * @return void
+				 * @param 
+				*/			
+			List<ArticleType> articletype=privateOrderServiceImpl.queryArticleTypes();
+			request.getServletContext().setAttribute("articletype", articletype);
+			return "main";
 	}
 }

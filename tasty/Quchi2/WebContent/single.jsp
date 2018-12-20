@@ -76,7 +76,7 @@
 </head>
 <body>
    <header>
-    <div class="header-nav">
+		<div class="header-nav">
         <div role="navigation">
             <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
             <ul class="hd-nav">
@@ -85,11 +85,11 @@
                             class="iconfont search-submit">&#xe617;</i></div>
                     <i class="search-exit"></i></li>
                 <li><a href="index.jsp" name="index">${lists.get(0).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="privateorder.jsp" name="productlist">${lists.get(1).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="article.jsp" name="article">${lists.get(2).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="shop_index.jsp" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="privateorder" name="productlist">${lists.get(1).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="article" name="article">${lists.get(2).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="shop_index.html" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="map.jsp" name="about">${lists.get(4).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="communities.jsp" name="about">${lists.get(5).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="communities?pageNum=1" name="about">${lists.get(5).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
             </ul>
 
             <!-- <div class="motai"></div> -->
@@ -114,9 +114,9 @@
                                     </button>
                                    
                                     <ul class="dropdown-menu" role="menu" id="sub_menu_1">
-                            			<li class="sma-menu"><a href="self.jsp"><img src="images/menu11.png">个人中心</a></li><br>
-                            			<li><a href="comment.jsp"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
-                            			<li><a href="order.jsp"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
+                            			<li class="sma-menu"><a href="self"><img src="images/menu11.png">个人中心</a></li><br>
+                            			<li><a href="comment"><img src="images/menu22.png">&nbsp;我的发布</a></li><br>
+                            			<li><a href="myorder"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
                             			<li><a href="SingOut"><img src="images/menu44.png">&nbsp;退出登录</a></li>
                     				</ul>
                                  
@@ -137,6 +137,7 @@
         </div>
 
     </div>
+		
 </header>
 <div class="header">
     <div class="content-wrapper">
@@ -213,30 +214,32 @@
     </div>
  <!--菜品菜二重循环 -->
      <c:forEach items="${dishtypelist}" var="dishtype">
-                   <a name=${dishtype}></a>  
-                 <div class="bottom1">  
+                   <a name=${dishtype}></a> 
+                 <div class="bottom1">
+                 <br>  
         		  <p><b> ${dishtype.dishesName}</b></p> 
                <c:forEach items="${dishtype.setfastfood}" var="fastfoodone">  
                  <div class="b1">         
                 <a href="#"><img src="${ctx }/${fastfoodone.fastfoodImg }" width="100px" height="100px"></a>
                 <b ><span class="t1">${fastfoodone.fastfoodName }</span></b>
                 <span class="t2">${fastfoodone.introduce }</span>
-                <span class="t3"><b>￥${fastfoodone.fastfoodPrice }</b> <a href="###" class="button button-primary button-pill button-small"  onclick="add('${fastfoodone.fastfoodId }','${restaurant.shopId}');">加入购物车</a>
+                <span class="t3"><b>￥${fastfoodone.fastfoodPrice }</b> <c:if test="${uname!=null}"><a href="###" class="button button-primary button-pill button-small"  onclick="add('${fastfoodone.fastfoodId }','${restaurant.shopId}');">加入购物车</a></c:if>
                 </span>
                 </div>   
     		    </c:forEach>     	
         </div>
         </c:forEach>
-        <footer>
+       
+        <footer style="margin-top:40px;">
             <div>
-                <ul class="footer-top">
-                    <li><a href="index.html">网站首页</a></li>
-                    <li><a href="privateorder.html">私人订制</a></li>
-                    <li><a href="article.html">美食资讯</a></li>
-                    <li><a href="shop_index.html">果蔬商城</a></li>
-                    <li><a href="map.html">趣吃导航</a></li>
-                    <li><a href="communities.html">美食分享</a></li>
-                </ul>
+                 <ul class="footer-top">
+           <li><a href="index.jsp" name="index">${lists.get(0).name } <span></span></a></li>
+                <li><a href="privateorder" name="productlist">${lists.get(1).name } <span></span></a></li>
+                <li><a href="article" name="article">${lists.get(2).name } <span></span></a></li>
+                <li><a href="shop_index.html" name="contact">${lists.get(3).name } <span></span></a></li>
+                <li><a href="map.jsp" name="about">${lists.get(4).name } <span></span></a></li>
+                <li><a href="communities?pageNum=1" name="about">${lists.get(5).name } <span></span></a></li>
+        </ul>
             </div>
             <div>
                 <ul class="footer-body">
@@ -257,7 +260,7 @@
         
         </div>
          <div>
-        <a href="ordercontent"><input type="button"  value="0" class="num1" id="shopCart" style="background-image: url(images/che5.jpg);" /></a>
+        <c:if test="${uname!=null}"><a href="ordercontent"><input type="button"  value="0" class="num1" id="shopCart" style="background-image: url(images/che5.jpg);" /></a></c:if>
         </div>
         </footer> 
 

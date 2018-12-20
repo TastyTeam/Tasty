@@ -267,32 +267,7 @@
             </div>
         </div>
        
-        <footer>
-            <div>
-                <ul class="footer-top">
-                    <li><a href="index.html">网站首页</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="productlist.html">菜式欣赏</a></li>
-                    <li><a href="article.html">美食资讯</a></li>
-                    <li><a href="contact.html">在线预订</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul class="footer-body">
-                    <li>
-                        <span>电话:</span><span>0714-8868331</span>
-                    </li>
-                    <li>
-                        <span>邮箱:</span><span>123@dayeyunalading.com</span>
-                    </li>
-                    <li>
-                        <span>地址:</span><span>湖北省大冶市大冶大道金穗小区好太太办公室</span>
-                    </li>
-                </ul>
-                <P>designed and developed with by Daye Aladdin Technology Co., Ltd.</P>
-              
-            </div>
-        </footer>
+        <jsp:include page="footer.jsp"></jsp:include>
         
     
     </body>    

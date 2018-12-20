@@ -116,8 +116,8 @@
 					<h3 class="on" style="line-height: 10px; color: #ff6767;">美食随手拍</h3>
 				</div>
 				<div class="pai_box">
-					<a class="img" title="梦桃缘" href="images/1.png" target="_blank"><img
-						src="images/1.png" width="48" height="48"></a> <input
+					<a class="img" title="梦桃缘" href="images/img.jpg" target="_blank"><img
+						src="images/img.jpg" width="48" height="48"></a> <input
 						type="hidden" id="pai_id" value="951158" data-id="951158">
 					<div class="u">
 						<a target="_blank" href="###" class="t">${onearticle.user.userName}</a><span>2018-11-29
@@ -143,7 +143,7 @@
 											<li id="J_comment_item_154357700483794"
 												data-id="154357700483794">
 												<div class="pic">
-													<a href="#"><img src="images/1.png" width="48"
+													<a href="#"><img src="images/img.jpg" width="48"
 														height="48"></a>
 												</div>
 												<div class="detail">
@@ -163,7 +163,7 @@
 											<li id="J_comment_item_154357700483794"
 												data-id="154357700483794">
 												<div class="pic">
-													<a href="#"><img src="images/1.png" width="48"
+													<a href="#"><img src="images/img.jpg" width="48"
 														height="48"></a>
 												</div>
 												<div class="detail">

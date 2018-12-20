@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
 <!DOCTYPE html>
 <html style="height: 100%;">
@@ -87,8 +88,8 @@ body, html {
 			
 		}
 		#allmap{
-			width:75%;
-			height:370px;
+			width:90%;
+			height:375px;
 			margin: 0px;
 			padding: 0px;
         }
@@ -159,9 +160,7 @@ body, html {
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=glgOvIPAfyRns49oGf4KZi4whZ4xGV2Y"></script>
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
-<script type="text/javascript">
-    window.onload=function(){
-        
+<script type="text/javascript">       
         //高德地图定位
         var gaode = new AMap.Map('container');
         AMap.plugin('AMap.Geolocation', function() {
@@ -194,24 +193,25 @@ body, html {
                     enableMapClick : false
                 }); 
             //创建中心点坐标
-            var zhong = new BMap.Point(114.5221,37.99454);
+            var zhong = new BMap.Point(jingdu,weidu);
             map.centerAndZoom(zhong, 14);
             //创建圆
             var circle = new BMap.Circle(zhong,1500,{strokeColor:"white", strokeWeight:2, strokeOpacity:0.5}); 
             map.addOverlay(circle);
             //外卖信息
             var data_info = [
-                    [114.525788,38.009336,"<p style='text-align:center;font-size:20px;'>"+"河北师范大学" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>石家庄市裕华区雨巷街道河北师范大学</p>"+"<p width='30px' height='30px'><a href='#' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
-                    [114.530619,37.985709,"<p style='text-align:center;font-size:20px;'>"+"河北师范大学" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>石家庄市裕华区雨巷街道河北师范大学</p>"+"<p width='30px' height='30px'><a href='#' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
-                    [114.533442,38.01073,"<p style='text-align:center;font-size:20px;'>"+"河北师范大学" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>石家庄市裕华区雨巷街道河北师范大学</p>"+"<p width='30px' height='30px'><a href='#' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
-                    [114.555702,37.990754,"<p style='text-align:center;font-size:20px;'>"+"河北师范大学" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>石家庄市裕华区雨巷街道河北师范大学</p>"+"<p width='30px' height='30px'><a href='#' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"]
+            	<c:forEach items="${map_value }" var="map">
+                    [${map.longitude},${map.latitude},"<p style='text-align:center;font-size:20px;'>"+"${map.shopName}" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>${map.shopIntroduce}</p>"+"<p width='30px' height='30px'><a href='mapdishes?shopid=${map.shopId}' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
+                 </c:forEach>
                 ];
+
+         	/* <c:forEach items="${map_value }" var="map">
+        		alert(${map.longitude});
+        	</c:forEach> */
             //弹出窗口信息
             var opts = {
                         width : 250,     // 信息窗口宽度
                         height: 80,     // 信息窗口高度
-                        title : "dsfds" , // 信息窗口标题
-                        // enableMessage:true//设置允许信息窗发送短息
                     };
             
             for(var i=0;i<data_info.length;i++){
@@ -222,12 +222,13 @@ body, html {
                     var content = data_info[i][2];
                     map.addOverlay(marker);               // 将标注添加到地图中
                     addClickHandler(content,marker);
-
-                    //添加鼠标放上时打开自定义信息窗口事件
-                    marker.addEventListener("mouseover",function () {
-                            this.openInfoWindow(new BMap.InfoWindow(content,opts));
-                        }
-                    );
+                    addEventListener(content,marker);
+                    //鼠标滑过时
+                    function addEventListener(content,marker){
+                        marker.addEventListener("mouseover",function(e){
+                            openInfo(content,e)}
+                        );
+                    }
                     //添加单击事件
                     function addClickHandler(content,marker){
                         marker.addEventListener("click",function(e){
@@ -246,82 +247,23 @@ body, html {
             map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
             var opts = {type: BMAP_NAVIGATION_CONTROL_PAN}    
             map.addControl(new BMap.NavigationControl(opts));
-
+			
+            
         }  
 
 
-    }
-     function dianji(){
+    /*  function dianji(){
          map.panTo(new BMap.Point(116.409, 39.918));  
-    }
+    } */
 </script>
+
  
 </head>
 
 <body style="height: 100%;">
  <div class="menu">
                 <header>
-                    <div class="header-nav">
-        <div role="navigation">
-            <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo2.png"></a>
-            <ul class="hd-nav">
-                <li class="search-box-li">
-                    <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
-                            class="iconfont search-submit">&#xe617;</i></div>
-                    <i class="search-exit"></i></li>
-                <li><a href="index.jsp" name="index">${lists.get(0).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="privateorder.jsp" name="productlist">${lists.get(1).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="article.jsp" name="article">${lists.get(2).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="shop_index.jsp" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="map.jsp" name="about">${lists.get(4).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="communities.jsp" name="about">${lists.get(5).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-            </ul>
-
-            <!-- <div class="motai"></div> -->
-            <c:if test="${uname==null}">
-            <ul>
-                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-                <li><a href="login.jsp">登录</a></li>&nbsp;&nbsp;
-                <li><a href="register.jsp">注册</a></li>
-                <li><a href="index.jsp"><i class="iconfont nav-bottom">&#xe61f;</i></a></li>
-            </ul>
-            </c:if>
-          	<c:if test="${uname!=null}">
-            <div class="sec_menu">
-                            <ul>
-                                <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-                                <li><a>欢迎，</a></li>&nbsp;
-                                <li><a>${uname}</a></li>&nbsp;
-                                <li onclick = "f('sub_menu_1')">
-                                    <div class="btn-group">
-                                    <button type="button" class="btn btn-inverse dropdown-toggle btn-xs" data-toggle="dropdown" >
-                                        <span class="caret"></span>
-                                    </button>
-                                   
-                                    <ul class="dropdown-menu" role="menu" id="sub_menu_1">
-                            			<li class="sma-menu"><a href="self.jsp"><img src="images/menu11.png">个人中心</a></li><br>
-                            			<li><a href="comment.jsp"><img src="images/menu22.png">&nbsp;我的评论</a></li><br>
-                            			<li><a href="order.jsp"><img src="images/menu33.png">&nbsp;我的订单</a></li><br>
-                            			<li><a href="SingOut"><img src="images/menu44.png">&nbsp;退出登录</a></li>
-                    				</ul>
-                                 
-                                    </div>
-                                </li>
-                            </ul>
-                            </div>
-                     </c:if>
-
-        </div>
-        <div class="search-box">
-            <form method="post" action="#" id="search-keyword">
-                <input type="text" name="search-keyword" placeholder="请输入您的内容">
-                <span>
-                    </span>
-            </form>
-
-        </div>
-
-    </div>
+           			<jsp:include page="head.jsp" />
                 </header>
                </div>
                 <script src="lib/jquery/jquery.js"></script>
@@ -347,64 +289,11 @@ body, html {
             <input type="text" id="address" class="form-control" placeholder="请输入地址" style="width:500px;height:45px;display:inline-block;">
             <input class="btn btn-lg btn-primary btn-block" type="submit" value="搜索" style="width:80px;display:inline-block;">
     </form>
-	<div  style="width:250px; float: left;height:450px;max-height: 450px !important">
-    <div class="shangjia">附近有<span class="fu">10</span>个商家</div>
-    <div class="row pre-scrollable" >
-
-            <table class="table table-hover">
-                    <tr class="buttons_tr"><td class="buttons_td"><a href="${ctx }/mapdishes?shopId=1" onclick="dianji()">
-                        <img src="images/map.png">
-                        <span class="buttons_name">名d称aaaaaaaaaa</span><br/>
-                        <span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td>
-                    </tr>
-
-                        <tr class="buttons_tr">
-                            <td class="buttons_td"><a href="${ctx }/mapdishes?shopId=1" >
-                         <img src="images/map.png">
-                          <span class="buttons_name">名d称aaaaaaaaaa</span><br/>
-                        <span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td>
-                    </tr>
-
-                        <tr class="buttons_tr"><td class="buttons_td"><a href=href="${ctx }/mapdishes?shopId=1" >
-                        <img src="images/map.png">
-                        <span class="buttons_name">名d称aaaaaaaaaa</span><br/>
-                        <span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td></tr>
-                        <tr class="buttons_tr"><td class="buttons_td"><a href="#">
-                        <img src="images/map.png">
-                        <span class="buttons_name">aaaaaaa</span><br/><span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td></tr>
-                        <tr class="buttons_tr"><td class="buttons_td"><a href="#">
-                        <img src="images/map.png">
-                        <span class="buttons_name">名d称aaaaaaaaaa</span><br/><span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td></tr>
-                        <tr class="buttons_tr"><td class="buttons_td"><a href="#">
-                        <img src="images/map.png">
-                        <span class="buttons_name">名d称aaaaaaaaaa</span><br/><span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td></tr>
-                        <tr class="buttons_tr"><td class="buttons_td"><a href="#">
-                        <img src="images/map.png">
-                        <span class="buttons_name">名d称aaaaaaaaaa</span><br/><span class="buttons_tip">起送价:<span class="buttons_color">10￥</span></span>
-
-                        <br/><sapn class="buttons_ti">>距离<span class="fu">479</span>米</sapn></a></td></tr>
-                    </table>
-                    
-    			</div>
-			</div>
-		<!-- 这个是百度地图 -->
-		<div id="allmap"></div>
-		</div>
-
-
-
+	
+	<!-- 这个是百度地图 -->
+	<div id="allmap"></div>
+	
+</div>
 </body>
     
 </html>
