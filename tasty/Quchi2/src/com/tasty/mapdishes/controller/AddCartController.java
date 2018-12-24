@@ -38,7 +38,7 @@ public class AddCartController {
 		
 		HttpSession session=request.getSession();
 		String phone=(String)session.getAttribute("phone");
-		
+		System.out.println("phone"+phone);
 		if(phone1.equals(phone)) {
 			String orderuuid=(String)session.getAttribute("orderuuid");
 			System.out.println("dyyy"+phone);
@@ -49,7 +49,7 @@ public class AddCartController {
 				int orderDetailId=r.nextInt();
 				System.out.println(orderDetailId);
 				addCartServiceImpl.setorderdetail(orderuuid,fastfoodNumber,fastfoodId,orderDetailId);
-				System.out.println("1");
+				System.out.println("1111111");
 				addCartServiceImpl.setMyOrderShopId(orderuuid, shopid);;
 			}
 			else {
@@ -60,13 +60,25 @@ public class AddCartController {
 				session.setAttribute("orderuuid", orderuuid1);
 				java.util.Random r=new java.util.Random();
 				int orderDetailId=r.nextInt();
-				System.out.println(orderDetailId);
-				System.out.println("2");
+				
+				System.out.println("2222222");
 				addCartServiceImpl.setorderdetail(orderuuid1,fastfoodNumber,fastfoodId,orderDetailId);
 				addCartServiceImpl.setshopIdTOMyOrder(orderuuid1, shopid,phone);
 			}
 		}else {
-			session.setAttribute("phone", phone1);
+			String od=(String)session.getAttribute("orderuuid");
+			if(od!=null&&!od.equals("")) {
+				session.setAttribute("phone", phone);
+				int fastfoodNumber=Integer.parseInt(count);
+				int fastfoodId=Integer.parseInt(fastfoodid);
+				java.util.Random r=new java.util.Random();
+				int orderDetailId=r.nextInt();
+				System.out.println(orderDetailId);
+				System.out.println("33333333");
+				addCartServiceImpl.setorderdetail(od,fastfoodNumber,fastfoodId,orderDetailId);
+				addCartServiceImpl.setshopIdTOMyOrder(od, shopid,phone);
+			}else {
+			session.setAttribute("phone", phone);
 			int fastfoodNumber=Integer.parseInt(count);
 			int fastfoodId=Integer.parseInt(fastfoodid);
 			String orderuuid = UUID.randomUUID().toString().replaceAll("-", "");
@@ -75,9 +87,10 @@ public class AddCartController {
 			java.util.Random r=new java.util.Random();
 			int orderDetailId=r.nextInt();
 			System.out.println(orderDetailId);
-			System.out.println("3");
+			System.out.println("33333333");
 			addCartServiceImpl.setorderdetail(orderuuid,fastfoodNumber,fastfoodId,orderDetailId);
 			addCartServiceImpl.setshopIdTOMyOrder(orderuuid, shopid,phone);
+		}
 		}
 	} 
 	

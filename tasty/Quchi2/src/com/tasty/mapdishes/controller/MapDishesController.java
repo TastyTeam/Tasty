@@ -27,6 +27,9 @@ public class MapDishesController {
 	public String queryRestaurant(HttpServletRequest request) {
 		String shopid=request.getParameter("shopid");
 		int shopId=Integer.parseInt(shopid);
+		HttpSession session=request.getSession();
+		String phone=(String)session.getAttribute("phone");
+		System.out.println("phone2"+phone);
 		//创建session---董莹
 		/*HttpSession session=request.getSession();
 		Object obj=session.getAttribute("shopId");

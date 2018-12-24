@@ -45,13 +45,14 @@
 <script type="text/javascript">
     function add(id,shopId){
                  var num=document.getElementById("shopCart");
-                 num.value=parseInt(num.value)+1;
+                  num.value=parseInt(num.value)+1;
+                  
                  var phone='15226517505';
-                
+                var c='1';
                  $
 					.ajax({
 						url : "add?fastfoodId=" + id + "&count="
-								+ num.value + "&phone=" + phone+ "&shopIdd=" + shopId,
+								+ c + "&phone=" + phone+ "&shopIdd=" + shopId,
 						async : true,
 						type : "POST",
 					});

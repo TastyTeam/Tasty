@@ -45,12 +45,12 @@ public class OrderContentInsertController {
 		HttpSession session=request.getSession();
 		Object obj=session.getAttribute("orderuuid");
 		String orderuuid = (String)obj;
-		System.out.println("2");
+		
 		String addinformation=request.getParameter("addinformation");
 		String tableware=request.getParameter("tableware");
 		int tableware2=Integer.parseInt(tableware);
 		orderContentInsertService.insertother(addinformation, tableware2, orderuuid);
-		response.sendRedirect("success.html");
+		response.sendRedirect("success.jsp");
 		
 	}
 

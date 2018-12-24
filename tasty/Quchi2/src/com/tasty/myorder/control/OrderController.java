@@ -31,6 +31,7 @@ public class OrderController {
 		String phone=(String)session.getAttribute("phone");
 		if(phone!=null&&!phone.equals(""))
 		{
+			System.out.println(phone);
 			request.setAttribute("myorder", orderServiceImpl.getOrder(phone));
 			return "myorder";
 		}else {

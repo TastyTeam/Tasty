@@ -64,6 +64,7 @@ public class LoginController {
 			}else {
 				HttpSession session=request.getSession();
 				session.setAttribute("phone", phone);
+				System.out.println("phone3"+phone);
 				session.setAttribute("uname", user.getUserName());
 				return "index";
 			}

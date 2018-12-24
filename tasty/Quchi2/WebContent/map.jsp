@@ -162,6 +162,8 @@ body, html {
 <script type="text/javascript" src="http://api.map.baidu.com/library/GeoUtils/1.2/src/GeoUtils_min.js"></script>
 <script type="text/javascript">       
         //高德地图定位
+        
+      <c:if test="${longitude==null}">
         var gaode = new AMap.Map('container');
         AMap.plugin('AMap.Geolocation', function() {
             var geolocation = new AMap.Geolocation({
@@ -247,14 +249,68 @@ body, html {
             map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
             var opts = {type: BMAP_NAVIGATION_CONTROL_PAN}    
             map.addControl(new BMap.NavigationControl(opts));
-			
-            
         }  
+      </c:if>
+      <c:if test="${longitude!=null}">
+      window.onload=function(){
+          // 百度地图API功能	
+          map = new BMap.Map("allmap", {
+                  enableMapClick : false
+              }); 
+          //创建中心点坐标
+          var zhong = new BMap.Point(${longitude},${latitude});
+          map.centerAndZoom(zhong, 14);
+          //创建圆
+          var circle = new BMap.Circle(zhong,1500,{strokeColor:"white", strokeWeight:2, strokeOpacity:0.5}); 
+          map.addOverlay(circle);
+          //外卖信息
+          var data_info = [
+          	<c:forEach items="${map_value }" var="map">
+                  [${map.longitude},${map.latitude},"<p style='text-align:center;font-size:20px;'>"+"${map.shopName}" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>${map.shopIntroduce}</p>"+"<p width='30px' height='30px'><a href='mapdishes?shopid=${map.shopId}' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
+               </c:forEach>
+              ];
+          //弹出窗口信息
+          var opts = {
+                      width : 250,     // 信息窗口宽度
+                      height: 80,     // 信息窗口高度
+                  };
+          
+          for(var i=0;i<data_info.length;i++){
+              var waimai=new BMap.Point(data_info[i][0],data_info[i][1]);
 
-
-    /*  function dianji(){
-         map.panTo(new BMap.Point(116.409, 39.918));  
-    } */
+              if(BMapLib.GeoUtils.isPointInCircle(waimai,circle)){	
+                  var marker = new BMap.Marker(waimai);  // 创建标注
+                  var content = data_info[i][2];
+                  map.addOverlay(marker);               // 将标注添加到地图中
+                  addClickHandler(content,marker);
+                  addEventListener(content,marker);
+                  //鼠标滑过时
+                  function addEventListener(content,marker){
+                      marker.addEventListener("mouseover",function(e){
+                          openInfo(content,e)}
+                      );
+                  }
+                  //添加单击事件
+                  function addClickHandler(content,marker){
+                      marker.addEventListener("click",function(e){
+                          openInfo(content,e)}
+                      );
+                  }
+                  function openInfo(content,e){
+                      var p = e.target;
+                      var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+                      
+                      var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
+                      map.openInfoWindow(infoWindow,point); //开启信息窗口
+                  }
+              }
+          }
+          map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+          var opts = {type: BMAP_NAVIGATION_CONTROL_PAN}    
+          map.addControl(new BMap.NavigationControl(opts));
+      }
+      </c:if>
+        
 </script>
 
  
@@ -285,8 +341,8 @@ body, html {
 </script>
 <!--主体-->
 <div class="main" >
-    <form action="#" class="biaodan" >
-            <input type="text" id="address" class="form-control" placeholder="请输入地址" style="width:500px;height:45px;display:inline-block;">
+    <form action="sousuo" class="biaodan" method="get">
+            <input type="text" id="address" name="address" class="form-control" placeholder="请输入地址" style="width:500px;height:45px;display:inline-block;">
             <input class="btn btn-lg btn-primary btn-block" type="submit" value="搜索" style="width:80px;display:inline-block;">
     </form>
 	

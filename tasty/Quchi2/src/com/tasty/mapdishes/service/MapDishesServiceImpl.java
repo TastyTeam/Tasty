@@ -42,8 +42,5 @@ public class MapDishesServiceImpl {
 	 * @desc用于查询一个商家菜品的所有类型
 	 * @param key餐品类型的主键
 	 */
-	public List<FastFood> queryFastFoodList(int key) {
-		List<FastFood> fastfood=mapdishesdaoimpl.listFastFood(0);
-		return fastfood;
-	}
+	
 }
