@@ -123,12 +123,13 @@
         
             <c:forEach var="cart" items="${cart}">
                 <table class="table3">
+                <c:if test="${cart.count ne 0 }">
                     <tr id="dish1">
                         <td class="table3-td-1">${cart.fastfood.fastfoodName}</td>
-                        <td class="table3-td-2"><input  type="number" value="${cart.count }" id="${cart.fastfood.fastfoodId}" style="width:50px;" onclick="order('${cart.fastfood.fastfoodId}');"></td>
+                        <td class="table3-td-2"><input  type="number" value="${cart.count }" min="0" id="${cart.fastfood.fastfoodId}" style="width:50px;" onclick="order('${cart.fastfood.fastfoodId}');"></td>
                         <td class="table3-td-3" id="price1">${cart.fastfood.fastfoodPrice}</td>
                     </tr>
-                
+                </c:if>
                 </table>
                </c:forEach>
             
@@ -280,14 +281,16 @@
         	  
                 var strtonu = document.getElementById(re).value; 
                 var  all = document.getElementById("all");
-            if(strtonu==0){
-            dish1.style.display="none";
+             if(strtonu==0){
+            /* dish1.style.display="none"; */
             all.innerHTML= 0;
             }else {
             	/* var x=${ordercount * orderdetail.fastfoodPrice}
                 all.innerHTML= '￥'+ x +'.00'; */
-            }
+            } 
+            
             location.href="insertcount?count="+strtonu+"&fastfoodId="+re;
+            
             }
           
 </script>

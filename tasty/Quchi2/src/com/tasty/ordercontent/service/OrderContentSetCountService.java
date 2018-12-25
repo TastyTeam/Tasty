@@ -28,5 +28,8 @@ public class OrderContentSetCountService {
 		orderContentInsertDao.setprice(price,orderuuid);
 		
 	}
+	public void delcount(String orderuuid,int fastfoodId) {
+		orderContentInsertDao.delcount(orderuuid, fastfoodId);
+	}
 
 }

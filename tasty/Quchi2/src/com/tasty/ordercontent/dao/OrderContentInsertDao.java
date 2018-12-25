@@ -53,5 +53,12 @@ public class OrderContentInsertDao {
 		q.setString(1, orderuuid);
 		q.executeUpdate();		
 	}
+	public void delcount(String orderuuid,int fastfoodId) {
+		Session session =this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("delete from OrderDetail od where fastfoodId=? and orderuuid=?");
+		q.setInteger(0, fastfoodId);
+		q.setString(1, orderuuid);
+		q.executeUpdate();
+	}
 
 }

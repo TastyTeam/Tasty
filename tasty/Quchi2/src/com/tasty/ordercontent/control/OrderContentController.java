@@ -64,16 +64,29 @@ public class OrderContentController {
 		String count=request.getParameter("count");
 		String fastfoodId=request.getParameter("fastfoodId");
 		HttpSession session=request.getSession();
+		
 		Object obj=session.getAttribute("orderuuid");
+		int count3=Integer.parseInt(count);
+		System.out.println("count数量"+count3);
+		if(count3==0) {
+			System.out.println("count数量"+count3);
+		}
 		if (obj!=null) {
 			String orderuuid = (String)obj;
 		if(count!=null&&!count.equals("")&&orderuuid!=null&&!orderuuid.equals("")) {
 			int count2=Integer.parseInt(count);
 			int id=Integer.parseInt(fastfoodId);
+			System.out.println("count数量"+count);
 			ordercontentsetcountservice.setcount(count2,orderuuid,id);
 			response.sendRedirect("ordercontent");
-		}
-		}
+			if(count2==0) {
+				ordercontentsetcountservice.delcount(orderuuid, id);
+			}else {
+				
+				}
+			}
+		} 
+		
 	}
 
 }

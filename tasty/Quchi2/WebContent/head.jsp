@@ -32,9 +32,7 @@
       } 
 
 </script>
-<script type="text/javascript">
 
-</script>
 <style>
 .header-nav{
     background-color: black;
@@ -49,7 +47,7 @@
 } 
 </style>
 </head>
-<body style="height: 100%;">
+<!-- <body style="height: 100%;"> -->
 
 
     <div class="header-nav">
@@ -105,12 +103,9 @@
                             </ul>
                             </div>
                      </c:if>
-
         </div>
-        
-
     </div>
-<div class="chatbar" style="z-index: 100">
+<div class="chatbar" style="z-index:100;">
         <div class="chatbar-box">
             <div class="chatbar-contacts">
                
@@ -147,4 +142,4 @@
    <script src="js/demo.js"></script>
 
 
-</body>
+<!-- </body> -->
