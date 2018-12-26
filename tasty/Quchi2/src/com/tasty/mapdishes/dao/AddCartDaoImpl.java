@@ -71,6 +71,17 @@ public class AddCartDaoImpl {
 		q.setString(1, orderuuid);
 		q.executeUpdate();
 	}
+	public boolean getfoodexit(String od, int fastfoodid) {
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createSQLQuery("select orderDetailId from OrderDetail od where od.orderuuid=? and od.fastfoodId=?");
+		q.setString(0, od);
+		q.setInteger(1, fastfoodid);
+		if(q.uniqueResult()!=null&&!q.uniqueResult().equals("")) {
+			return true;
+		}else {
+		return false;
+		}
+	}
 	
 	
 }

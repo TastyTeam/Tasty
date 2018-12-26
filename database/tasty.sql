@@ -10,10 +10,33 @@ Target Server Type    : MYSQL
 Target Server Version : 50506
 File Encoding         : 65001
 
-Date: 2018-12-20 11:11:26
+Date: 2018-12-26 09:01:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `address`
+-- ----------------------------
+DROP TABLE IF EXISTS `address`;
+CREATE TABLE `address` (
+  `addressid` int(11) NOT NULL AUTO_INCREMENT,
+  `addressname` varchar(20) DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
+  `latitude` double DEFAULT NULL,
+  PRIMARY KEY (`addressid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=gbk;
+
+-- ----------------------------
+-- Records of address
+-- ----------------------------
+INSERT INTO `address` VALUES ('1', '河北科技大学', '114.52778', '37.983333');
+INSERT INTO `address` VALUES ('2', '河北师范大学', '114.5271', '38.003408');
+INSERT INTO `address` VALUES ('3', '万达广场', '114.551556', '38.029654');
+INSERT INTO `address` VALUES ('4', '动物园', '114.312388', '38.070036');
+INSERT INTO `address` VALUES ('5', '怀特商城', '114.536656', '38.028589');
+INSERT INTO `address` VALUES ('6', '乐汇商城', '114.458988', '38.039883');
+INSERT INTO `address` VALUES ('7', '勒泰商场', '114.513185', '38.050879');
 
 -- ----------------------------
 -- Table structure for `article`
@@ -127,7 +150,7 @@ CREATE TABLE `community` (
   `hot` int(11) DEFAULT NULL,
   `comment` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`communityid`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of community
@@ -140,6 +163,7 @@ INSERT INTO `community` VALUES ('28', '2018-12-19 15:02:47', '#午餐时刻#今�
 INSERT INTO `community` VALUES ('29', '2018-12-19 15:05:05', '#西餐时刻#吃多了中餐，今天来个西餐，牛排很不错哦……', 'address', 'images/6cbe4cfc37f7df7839b6f910b4fff7782527ce921eca0-7optgw_fw658.jpg', '来点西餐', '15226517505', '1', null);
 INSERT INTO `community` VALUES ('30', '2018-12-19 15:08:23', '#小吃#薯条加麻花，一直都是我的最爱，在闲暇时刻，零食也是不能少的哦，看电影，听音乐，放松的时候最开心~~~', 'address', 'images/a843f7b40f5ea0e484c1aad5aab75f9eba24a52a192b3-YNjZQS_fw658.jpg', '小吃', '15226507932', '0', null);
 INSERT INTO `community` VALUES ('31', '2018-12-19 15:09:54', '#冬季小吃#平时去快餐店，这个派那个派非常贵，添加剂也不少。今天给大家介绍一个超级简单的自制香蕉派。包饺子剩了面皮切点香蕉片夹在里面，平底锅一煎。小孩子特爱吃。', 'address', 'images/8bcb424254222c3228f72b19c983fee462ea75122fe5-7C5E95_fw658.jpg', '小吃', '15226507932', '1', null);
+INSERT INTO `community` VALUES ('32', '2018-12-25 15:05:13', '#水果#每日一颗蓝莓，好吃又健康！', 'address', 'images/502.jpg', '蓝莓', '15226507930', '1', null);
 
 -- ----------------------------
 -- Table structure for `dishes`
@@ -756,6 +780,32 @@ INSERT INTO `myorder` VALUES ('3607e6d26493419d9bb33006ede01ddd', '0', 'Doing', 
 INSERT INTO `myorder` VALUES ('d5fad7be1f4944a58445735a1f791f2d', '0', 'czc', 'ad', null, '15226507930', '无', '15226507930', '未支付', '2018-12-19 17:34:13', '1', '126');
 INSERT INTO `myorder` VALUES ('c06ff02d856e45d0b07fc25f984ae43b', '0', 'czc', 'ad', null, '15226507930', '无', '15226507930', '未支付', '2018-12-19 17:53:40', '1', '141');
 INSERT INTO `myorder` VALUES ('d31bb203fae84abd801ca833e9c83537', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '无', '13946680120', '未支付', '2018-12-20 10:49:15', '1', '37');
+INSERT INTO `myorder` VALUES ('607d71de36884863972b7ed9e58d54b5', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 08:07:17', '1', '140');
+INSERT INTO `myorder` VALUES ('fc41beee98ab445d832a2a12d75cc5dc', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '无', '13946680120', '未支付', '2018-12-24 08:20:51', '1', '267');
+INSERT INTO `myorder` VALUES ('c6d846559b3d4570b7f8fe2be2b9eeff', '0', 'czc', 'ad', null, '15226507930', '无', '15226507930', '未支付', '2018-12-24 08:23:50', '3', '37');
+INSERT INTO `myorder` VALUES ('a4eaf3f327bf4e2d9d64e72e0e7cedaa', '0', 'czc', 'ad', null, '15226507930', '无', '15226507930', '未支付', '2018-12-24 08:25:56', '1', '134');
+INSERT INTO `myorder` VALUES ('c0250826404549e0a407385593796225', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '', '13946680120', '未支付', '2018-12-24 08:40:06', '3', '220');
+INSERT INTO `myorder` VALUES ('a33f94ac66d442faac4ec40dc35f7654', '0', 'czc', 'ad', null, '15226507930', '', '15226507930', '未支付', '2018-12-24 09:12:45', '1', '69');
+INSERT INTO `myorder` VALUES ('5105693f2e654dbeb3669e28334f3765', '0', 'czc', 'ad', null, '15226507930', '', '15226507930', '未支付', '2018-12-24 09:16:36', '1', '36');
+INSERT INTO `myorder` VALUES ('c795b13ec37d4255a2bd6d195a6e392c', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 09:18:10', '3', '0');
+INSERT INTO `myorder` VALUES ('9d55b3f5c2c64ed3b705339a83253514', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 09:18:11', '3', '12');
+INSERT INTO `myorder` VALUES ('5b22cc7fffdf47ada6c21d1f22b53a82', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 09:18:16', '3', '0');
+INSERT INTO `myorder` VALUES ('09ab793c4c714c439db0845ef2f883b7', '0', 'doing', '12', '12', '12345678901', '', '12345678901', '未支付', '2018-12-24 09:18:18', '3', '26');
+INSERT INTO `myorder` VALUES ('111ebe305c4345af9a34231cc2dd43ec', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 09:18:49', '3', '0');
+INSERT INTO `myorder` VALUES ('b671700c2c14449d8895a4870e30969d', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 09:18:50', '3', '0');
+INSERT INTO `myorder` VALUES ('21e46129e3774bccbcebaf155fea2e6d', '0', 'doing', '12', '12', '12345678901', '无', '12345678901', '未支付', '2018-12-24 09:18:51', '3', '16');
+INSERT INTO `myorder` VALUES ('e97c84633b1f41bbabc7149fc8e13188', '0', '四花花', 'images/1.png', 'wer', '15226507932', '无', '15226507932', '未支付', '2018-12-24 09:20:23', '1', '0');
+INSERT INTO `myorder` VALUES ('5e5bdc1d4487486e9fbb3478d2730a8c', '0', '四花花', 'images/1.png', 'wer', '15226507932', '', '15226507932', '未支付', '2018-12-24 09:20:24', '1', '10');
+INSERT INTO `myorder` VALUES ('3e0acf140af54417bfe710a4a08fbc7a', '0', '四花花', 'images/1.png', 'wer', '15226507932', '无', '15226507932', '未支付', '2018-12-24 09:23:25', '1', '0');
+INSERT INTO `myorder` VALUES ('98d8c635e689474aa0e6d4b3f3480f29', '0', '四花花', 'images/1.png', 'wer', '15226507932', '无', '15226507932', '未支付', '2018-12-24 09:23:25', '1', '0');
+INSERT INTO `myorder` VALUES ('ba34357c21a346cc81a11014545e19b8', '0', '四花花', 'images/1.png', 'wer', '15226507932', '', '15226507932', '未支付', '2018-12-24 09:34:46', '1', '57');
+INSERT INTO `myorder` VALUES ('193008bacf3b4fb0a7fe387fa555deef', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '', '13946680120', '未支付', '2018-12-24 09:36:33', '1', '114');
+INSERT INTO `myorder` VALUES ('e651cf4bb4a54f0dbb874a4fa672c27d', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '', '13946680120', '未支付', '2018-12-24 16:33:48', '1', '206');
+INSERT INTO `myorder` VALUES ('d152b054ff6643ed98dd36cac81cb233', '0', 'czc', 'ad', null, '15226507930', '无', '15226507930', '未支付', '2018-12-25 15:14:47', '1', '551');
+INSERT INTO `myorder` VALUES ('e9d9d9be1e334d5d80068f0d49d69283', '0', '11', '11', '11', '11111111111', '', '11111111111', '未支付', '2018-12-25 16:03:12', '1', '43');
+INSERT INTO `myorder` VALUES ('a55993fe15f64f83b6c0c6d0c33b2b70', '0', '11', '11', '11', '11111111111', '无', '11111111111', '未支付', '2018-12-25 16:33:02', '1', '63');
+INSERT INTO `myorder` VALUES ('462ede5c7e8443e3b83c8a9f0983df02', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '无', '13946680120', '未支付', '2018-12-26 08:03:45', '1', '192');
+INSERT INTO `myorder` VALUES ('c53b85928b1d4f5bbde7b3145dc8cd1c', '0', 'Doing', 'gfsdgfdsg', '男', '13946680120', '无', '13946680120', '未支付', '2018-12-26 08:50:58', '1', '238');
 
 -- ----------------------------
 -- Table structure for `navigation`
@@ -787,23 +837,28 @@ CREATE TABLE `orderdetail` (
   `fastfoodId` int(11) DEFAULT NULL,
   `orderuuid` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`orderDetailId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2130305771 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2147406924 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of orderdetail
 -- ----------------------------
 INSERT INTO `orderdetail` VALUES ('-2147430854', '1', '16', '6cd9f1de021f4bd48782e1dea4e77769');
 INSERT INTO `orderdetail` VALUES ('-2124452330', '1', '3', '029283116cff428cb55c2ab11599d261');
+INSERT INTO `orderdetail` VALUES ('-2074779639', '1', '46', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('-2068229702', '1', '13', '9abdfd21e95b410c94f217d36c1e313e');
 INSERT INTO `orderdetail` VALUES ('-2067349772', '1', '14', '5446169684d041cda5134553592de0b7');
 INSERT INTO `orderdetail` VALUES ('-2050609452', '1', '1', '46eb8fdd61904fe1854be5c9781e5d72');
 INSERT INTO `orderdetail` VALUES ('-2045087668', '1', '13', '423de1ffc4de4236be1b5661a5fe3396');
 INSERT INTO `orderdetail` VALUES ('-2013896140', '2', '5', '250f5514949c4438b2813453ebf6dabb');
 INSERT INTO `orderdetail` VALUES ('-1998575962', '1', '4', '3d7a78a6a65c470f8cd13925399d2dbd');
+INSERT INTO `orderdetail` VALUES ('-1981214586', '2', '43', 'c0250826404549e0a407385593796225');
+INSERT INTO `orderdetail` VALUES ('-1976461594', '3', '40', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-1969006613', '1', '25', 'd31bb203fae84abd801ca833e9c83537');
 INSERT INTO `orderdetail` VALUES ('-1932564892', '1', '12', '3d7a78a6a65c470f8cd13925399d2dbd');
 INSERT INTO `orderdetail` VALUES ('-1918985147', '2', '21', '21681a0154ff48218d987b7222121470');
+INSERT INTO `orderdetail` VALUES ('-1901107972', '3', '42', '607d71de36884863972b7ed9e58d54b5');
 INSERT INTO `orderdetail` VALUES ('-1897092210', '1', '12', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
+INSERT INTO `orderdetail` VALUES ('-1878696429', '2', '35', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-1845985054', '1', '12', '0c0efbdf09d14e8eb787fb145064cd3e');
 INSERT INTO `orderdetail` VALUES ('-1833301412', '1', '2', '9739a1ed2064454c9d718e72234571c1');
 INSERT INTO `orderdetail` VALUES ('-1831696308', '1', '1', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
@@ -811,34 +866,49 @@ INSERT INTO `orderdetail` VALUES ('-1748332093', '2', '12', '2e163ceb92164ed2a92
 INSERT INTO `orderdetail` VALUES ('-1718190282', '4', '1', '113eeee1b3834935a817ad8af620da9d');
 INSERT INTO `orderdetail` VALUES ('-1707305708', '1', '13', '83ecb6c701c94750bc34e5daf5932a64');
 INSERT INTO `orderdetail` VALUES ('-1703941559', '1', '11', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
+INSERT INTO `orderdetail` VALUES ('-1697759783', '1', '31', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
+INSERT INTO `orderdetail` VALUES ('-1689769326', '1', '26', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
+INSERT INTO `orderdetail` VALUES ('-1689681100', '2', '11', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('-1686471690', '2', '11', '807d2154ed79432cb71a67ea55838fe1');
 INSERT INTO `orderdetail` VALUES ('-1653131752', '2', '11', '7c82686016944e60855ac924de543ca8');
 INSERT INTO `orderdetail` VALUES ('-1634288850', '2', '4', 'e417be221e0b4ef087247d4b6bcfdcea');
 INSERT INTO `orderdetail` VALUES ('-1631908359', '2', '2', 'c06ff02d856e45d0b07fc25f984ae43b');
 INSERT INTO `orderdetail` VALUES ('-1628399734', '1', '1', 'e417be221e0b4ef087247d4b6bcfdcea');
 INSERT INTO `orderdetail` VALUES ('-1627135704', '1', '3', '885996af52e94ae5a3e6e16c4c192e69');
+INSERT INTO `orderdetail` VALUES ('-1624301525', '2', '12', '462ede5c7e8443e3b83c8a9f0983df02');
 INSERT INTO `orderdetail` VALUES ('-1599793274', '1', '5', '2dcf5cf375974c47adbca00c23a7ff64');
+INSERT INTO `orderdetail` VALUES ('-1598151894', '1', '18', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('-1593405010', '1', '13', '30c94ae8863246f5a5f9c910d75dbdf3');
 INSERT INTO `orderdetail` VALUES ('-1580020259', '2', '12', '46beddf28a2c4bbc866fbd88db039775');
 INSERT INTO `orderdetail` VALUES ('-1569731716', '1', '1', 'aa0757be9a8349bba1d8592d3b7dee31');
+INSERT INTO `orderdetail` VALUES ('-1567547034', '1', '1', 'e651cf4bb4a54f0dbb874a4fa672c27d');
+INSERT INTO `orderdetail` VALUES ('-1526386456', '1', '24', '5e5bdc1d4487486e9fbb3478d2730a8c');
+INSERT INTO `orderdetail` VALUES ('-1497350460', '1', '29', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-1475713238', '1', '14', '9e3c12864e6c4146ab7e9cb9d2290c2c');
 INSERT INTO `orderdetail` VALUES ('-1468135918', '1', '12', '80d32d57454d44c6883c3b7ac9db84d9');
 INSERT INTO `orderdetail` VALUES ('-1438600521', '2', '14', 'c4c667db6e1845bba10e57be4af33775');
 INSERT INTO `orderdetail` VALUES ('-1436073655', '2', '1', '3d7a78a6a65c470f8cd13925399d2dbd');
+INSERT INTO `orderdetail` VALUES ('-1390409198', '1', '12', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('-1385905896', '1', '22', 'fc8cff9abc174711922086b30bee4c14');
+INSERT INTO `orderdetail` VALUES ('-1379606354', '1', '11', '193008bacf3b4fb0a7fe387fa555deef');
 INSERT INTO `orderdetail` VALUES ('-1332979903', '2', '3', '21f4dafa8b044c6e873b9960f29ddd0d');
 INSERT INTO `orderdetail` VALUES ('-1317761122', '1', '12', '1b56072745534ec3aae34a2998f65a44');
+INSERT INTO `orderdetail` VALUES ('-1314862659', '2', '41', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
 INSERT INTO `orderdetail` VALUES ('-1289880312', '1', '11', 'c21c618e628b4467a0dcd0feb2cf2821');
 INSERT INTO `orderdetail` VALUES ('-1261260965', '1', '4', '7fed372d6a6c4dbba88ee7d1b524dfe5');
+INSERT INTO `orderdetail` VALUES ('-1245745634', '1', '39', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('-1199271167', '1', '1', '9ba2d02e267a42688da2366fa064919a');
 INSERT INTO `orderdetail` VALUES ('-1186490816', '2', '12', '46eb8fdd61904fe1854be5c9781e5d72');
+INSERT INTO `orderdetail` VALUES ('-1168563263', '1', '43', '21e46129e3774bccbcebaf155fea2e6d');
 INSERT INTO `orderdetail` VALUES ('-1120963075', '1', '3', 'e417be221e0b4ef087247d4b6bcfdcea');
 INSERT INTO `orderdetail` VALUES ('-1071659494', '1', '13', 'a8de40dda7374c6e8f0362b2188a9664');
+INSERT INTO `orderdetail` VALUES ('-1057271090', '2', '11', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('-1042478806', '3', '12', '46eb8fdd61904fe1854be5c9781e5d72');
 INSERT INTO `orderdetail` VALUES ('-1024819864', '1', '1', '7c82686016944e60855ac924de543ca8');
 INSERT INTO `orderdetail` VALUES ('-1012239491', '1', '20', '29b1db61433c4315b82491542fb17da5');
 INSERT INTO `orderdetail` VALUES ('-996437237', '2', '14', 'edf984e0772941eeac649b92305b3feb');
 INSERT INTO `orderdetail` VALUES ('-979915780', '3', '11', 'aa0757be9a8349bba1d8592d3b7dee31');
+INSERT INTO `orderdetail` VALUES ('-935409967', '1', '42', 'b671700c2c14449d8895a4870e30969d');
 INSERT INTO `orderdetail` VALUES ('-927259105', '1', '11', 'c2a8954206964e4d8490aa162eb1d09a');
 INSERT INTO `orderdetail` VALUES ('-906458588', '2', '1', '807d2154ed79432cb71a67ea55838fe1');
 INSERT INTO `orderdetail` VALUES ('-866106602', '2', '2', '3d7a78a6a65c470f8cd13925399d2dbd');
@@ -847,17 +917,28 @@ INSERT INTO `orderdetail` VALUES ('-802092536', '1', '14', '2a76f9330c194b6987e2
 INSERT INTO `orderdetail` VALUES ('-792837260', '1', '1', '9794360db79f49f0a8f5a11f50938850');
 INSERT INTO `orderdetail` VALUES ('-763766787', '1', '13', '5ddb2673e11f40f2a04f3e993ba6d983');
 INSERT INTO `orderdetail` VALUES ('-763701292', '1', '12', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
+INSERT INTO `orderdetail` VALUES ('-762762184', '1', '15', 'e9d9d9be1e334d5d80068f0d49d69283');
+INSERT INTO `orderdetail` VALUES ('-755818677', '4', '40', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-734436800', '1', '1', '36ed0af20c174a4b93de47d8b0c9016c');
 INSERT INTO `orderdetail` VALUES ('-719859635', '3', '1', '113eeee1b3834935a817ad8af620da9d');
+INSERT INTO `orderdetail` VALUES ('-713175815', '2', '38', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-711298456', '1', '4', '5446169684d041cda5134553592de0b7');
+INSERT INTO `orderdetail` VALUES ('-667810292', '0', '12', '607d71de36884863972b7ed9e58d54b5');
+INSERT INTO `orderdetail` VALUES ('-665736866', '2', '12', 'c53b85928b1d4f5bbde7b3145dc8cd1c');
 INSERT INTO `orderdetail` VALUES ('-654061478', '2', '12', '1bb1e9cc6e464a3c9d815ff47d88753e');
+INSERT INTO `orderdetail` VALUES ('-624957050', '1', '24', '98d8c635e689474aa0e6d4b3f3480f29');
+INSERT INTO `orderdetail` VALUES ('-603706299', '2', '23', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
 INSERT INTO `orderdetail` VALUES ('-598150277', '2', '14', '66ce880a32394127b8d5b372cde47d6b');
 INSERT INTO `orderdetail` VALUES ('-562935783', '3', '21', '21681a0154ff48218d987b7222121470');
+INSERT INTO `orderdetail` VALUES ('-560215707', '1', '23', 'e651cf4bb4a54f0dbb874a4fa672c27d');
 INSERT INTO `orderdetail` VALUES ('-541571585', '2', '3', '361c3c88da554375908ba0989fd7a343');
+INSERT INTO `orderdetail` VALUES ('-512250190', '1', '11', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('-492962191', '1', '11', '361c3c88da554375908ba0989fd7a343');
 INSERT INTO `orderdetail` VALUES ('-478138109', '3', '5', 'd8f092b0ee1e431e8575842277b40cbf');
+INSERT INTO `orderdetail` VALUES ('-469517547', '1', '34', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-462775692', '5', '21', '21681a0154ff48218d987b7222121470');
 INSERT INTO `orderdetail` VALUES ('-459863560', '2', '12', 'dd253d14f85e49f3957d6ded6fce5cfb');
+INSERT INTO `orderdetail` VALUES ('-440652188', '1', '39', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('-432324932', '1', '6', 'b56839e207ab494b85b3db1e8dbc02dd');
 INSERT INTO `orderdetail` VALUES ('-431855890', '1', '11', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
 INSERT INTO `orderdetail` VALUES ('-428537656', '1', '22', '3d7a78a6a65c470f8cd13925399d2dbd');
@@ -865,23 +946,33 @@ INSERT INTO `orderdetail` VALUES ('-410466186', '2', '1', '4f9fcab77eca48d0901a9
 INSERT INTO `orderdetail` VALUES ('-405249690', '2', '14', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
 INSERT INTO `orderdetail` VALUES ('-399273676', '2', '16', '46beddf28a2c4bbc866fbd88db039775');
 INSERT INTO `orderdetail` VALUES ('-388625864', '2', '1', '113eeee1b3834935a817ad8af620da9d');
+INSERT INTO `orderdetail` VALUES ('-365297377', '1', '1', 'e9d9d9be1e334d5d80068f0d49d69283');
 INSERT INTO `orderdetail` VALUES ('-357292250', '1', '13', '423de1ffc4de4236be1b5661a5fe3396');
+INSERT INTO `orderdetail` VALUES ('-355057546', '1', '24', 'a33f94ac66d442faac4ec40dc35f7654');
 INSERT INTO `orderdetail` VALUES ('-350605928', '1', '13', '2e163ceb92164ed2a92fae1556c97cb0');
 INSERT INTO `orderdetail` VALUES ('-334376511', '1', '2', '9794360db79f49f0a8f5a11f50938850');
 INSERT INTO `orderdetail` VALUES ('-331643020', '3', '2', 'd5fad7be1f4944a58445735a1f791f2d');
+INSERT INTO `orderdetail` VALUES ('-316416682', '1', '23', 'e97c84633b1f41bbabc7149fc8e13188');
 INSERT INTO `orderdetail` VALUES ('-227093628', '1', '17', '3d7a78a6a65c470f8cd13925399d2dbd');
 INSERT INTO `orderdetail` VALUES ('-217009250', '3', '12', '80d32d57454d44c6883c3b7ac9db84d9');
 INSERT INTO `orderdetail` VALUES ('-212354151', '1', '2', '561ea2c86ba14e8d9807bdf9edd98cd0');
 INSERT INTO `orderdetail` VALUES ('-207058140', '1', '1', '113eeee1b3834935a817ad8af620da9d');
 INSERT INTO `orderdetail` VALUES ('-206220728', '6', '12', '46eb8fdd61904fe1854be5c9781e5d72');
+INSERT INTO `orderdetail` VALUES ('-164510592', '1', '44', '5b22cc7fffdf47ada6c21d1f22b53a82');
+INSERT INTO `orderdetail` VALUES ('-151844883', '1', '12', '193008bacf3b4fb0a7fe387fa555deef');
 INSERT INTO `orderdetail` VALUES ('-101902485', '1', '12', '46eb8fdd61904fe1854be5c9781e5d72');
+INSERT INTO `orderdetail` VALUES ('-54780884', '1', '14', 'a33f94ac66d442faac4ec40dc35f7654');
+INSERT INTO `orderdetail` VALUES ('-44074307', '2', '43', '607d71de36884863972b7ed9e58d54b5');
+INSERT INTO `orderdetail` VALUES ('-24638578', '1', '19', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('1', '2', '1', '397966db-e384');
 INSERT INTO `orderdetail` VALUES ('2', '3', '1', '397966db-e384');
 INSERT INTO `orderdetail` VALUES ('8659118', '2', '11', '9ba2d02e267a42688da2366fa064919a');
 INSERT INTO `orderdetail` VALUES ('33337583', '1', '5', '09a31da56cf649efb59016c557e3a651');
 INSERT INTO `orderdetail` VALUES ('51406121', '1', '21', '21681a0154ff48218d987b7222121470');
+INSERT INTO `orderdetail` VALUES ('64749808', '2', '13', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('66740315', '2', '1', '3d7a78a6a65c470f8cd13925399d2dbd');
 INSERT INTO `orderdetail` VALUES ('77271095', '2', '2', 'ba3e8fc4117f48daacc329543cc53653');
+INSERT INTO `orderdetail` VALUES ('83386052', '1', '35', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('105868570', '1', '22', '669a6a9cfd4a4b9eb5fe75809ef41504');
 INSERT INTO `orderdetail` VALUES ('139442294', '1', '1', 'e5c62627fb6642719f80a4b7c55d9063');
 INSERT INTO `orderdetail` VALUES ('150943204', '1', '16', '561ea2c86ba14e8d9807bdf9edd98cd0');
@@ -889,15 +980,21 @@ INSERT INTO `orderdetail` VALUES ('184193976', '1', '1', 'e417be221e0b4ef087247d
 INSERT INTO `orderdetail` VALUES ('189656666', '1', '12', 'f51e8bb9cb8444e2ad48d19fc9e14fdd');
 INSERT INTO `orderdetail` VALUES ('190108439', '1', '2', '9b79634b88f84c09ad7e14967a8f90c7');
 INSERT INTO `orderdetail` VALUES ('209892905', '1', '9', 'f6689010792a47379bb88e89d2c444d5');
+INSERT INTO `orderdetail` VALUES ('213714405', '1', '44', '607d71de36884863972b7ed9e58d54b5');
 INSERT INTO `orderdetail` VALUES ('231028206', '1', '22', '361c3c88da554375908ba0989fd7a343');
 INSERT INTO `orderdetail` VALUES ('234154117', '1', '2', 'd5fad7be1f4944a58445735a1f791f2d');
 INSERT INTO `orderdetail` VALUES ('240140325', '2', '12', '4851251100a14b8d81c225f2ff6a5c3c');
 INSERT INTO `orderdetail` VALUES ('245927126', '5', '12', '46eb8fdd61904fe1854be5c9781e5d72');
 INSERT INTO `orderdetail` VALUES ('246384398', '1', '12', 'fb5d1b1898c34ada90d4eae69dba52cc');
 INSERT INTO `orderdetail` VALUES ('261220176', '2', '11', 'e1aa80bcd7d1414884a40d0436f47ab4');
+INSERT INTO `orderdetail` VALUES ('262008100', '1', '1', '607d71de36884863972b7ed9e58d54b5');
+INSERT INTO `orderdetail` VALUES ('265670082', '1', '2', 'ba34357c21a346cc81a11014545e19b8');
 INSERT INTO `orderdetail` VALUES ('282004108', '2', '11', '9794360db79f49f0a8f5a11f50938850');
+INSERT INTO `orderdetail` VALUES ('283858975', '1', '25', 'd152b054ff6643ed98dd36cac81cb233');
+INSERT INTO `orderdetail` VALUES ('297824448', '1', '12', 'e651cf4bb4a54f0dbb874a4fa672c27d');
 INSERT INTO `orderdetail` VALUES ('299080254', '1', '14', '3607e6d26493419d9bb33006ede01ddd');
 INSERT INTO `orderdetail` VALUES ('309254871', '1', '15', '755fb73ee2b84e239bd37a03207bcb4d');
+INSERT INTO `orderdetail` VALUES ('310696493', '1', '15', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('320697670', '2', '1', '778d6bbe7107407d814697bce39b3b62');
 INSERT INTO `orderdetail` VALUES ('367277999', '1', '22', 'bf845419c53f41f683569b8628d3c10c');
 INSERT INTO `orderdetail` VALUES ('372391421', '2', '15', '0a6dafcca44a4e72a8bbada08b8f04c6');
@@ -906,25 +1003,49 @@ INSERT INTO `orderdetail` VALUES ('433123390', '4', '12', '80d32d57454d44c6883c3
 INSERT INTO `orderdetail` VALUES ('434231569', '1', '11', '3607e6d26493419d9bb33006ede01ddd');
 INSERT INTO `orderdetail` VALUES ('485667019', '3', '3', 'b243487f98ee49619657b32c4ba5553d');
 INSERT INTO `orderdetail` VALUES ('497928595', '1', '13', 'c06ff02d856e45d0b07fc25f984ae43b');
+INSERT INTO `orderdetail` VALUES ('509100397', '2', '11', 'd152b054ff6643ed98dd36cac81cb233');
+INSERT INTO `orderdetail` VALUES ('531140524', '0', '24', '607d71de36884863972b7ed9e58d54b5');
+INSERT INTO `orderdetail` VALUES ('568396657', '1', '42', 'c6d846559b3d4570b7f8fe2be2b9eeff');
 INSERT INTO `orderdetail` VALUES ('602135925', '2', '23', 'd31bb203fae84abd801ca833e9c83537');
+INSERT INTO `orderdetail` VALUES ('621009328', '1', '11', 'e651cf4bb4a54f0dbb874a4fa672c27d');
 INSERT INTO `orderdetail` VALUES ('621451581', '1', '21', 'c06ff02d856e45d0b07fc25f984ae43b');
+INSERT INTO `orderdetail` VALUES ('657971108', '1', '2', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('678685399', '1', '3', '251863bc5d8d4c6ab999d60169759bfd');
 INSERT INTO `orderdetail` VALUES ('686485087', '1', '22', '423de1ffc4de4236be1b5661a5fe3396');
+INSERT INTO `orderdetail` VALUES ('691116238', '1', '2', '3e0acf140af54417bfe710a4a08fbc7a');
+INSERT INTO `orderdetail` VALUES ('692326658', '1', '42', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('697205178', '1', '3', '46beddf28a2c4bbc866fbd88db039775');
+INSERT INTO `orderdetail` VALUES ('748269716', '1', '12', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('755836329', '1', '21', '21681a0154ff48218d987b7222121470');
+INSERT INTO `orderdetail` VALUES ('760221965', '1', '34', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
 INSERT INTO `orderdetail` VALUES ('767795187', '1', '3', '5f4bc4f4c5114ca7a9cb11cdc1661245');
 INSERT INTO `orderdetail` VALUES ('776060133', '3', '21', '21681a0154ff48218d987b7222121470');
+INSERT INTO `orderdetail` VALUES ('807771496', '5', '26', 'c53b85928b1d4f5bbde7b3145dc8cd1c');
+INSERT INTO `orderdetail` VALUES ('832920587', '0', '11', '607d71de36884863972b7ed9e58d54b5');
+INSERT INTO `orderdetail` VALUES ('850126422', '1', '26', 'a33f94ac66d442faac4ec40dc35f7654');
 INSERT INTO `orderdetail` VALUES ('852820902', '2', '5', 'e417be221e0b4ef087247d4b6bcfdcea');
+INSERT INTO `orderdetail` VALUES ('857830757', '1', '11', 'ba34357c21a346cc81a11014545e19b8');
+INSERT INTO `orderdetail` VALUES ('863042198', '1', '11', '462ede5c7e8443e3b83c8a9f0983df02');
+INSERT INTO `orderdetail` VALUES ('872626930', '2', '46', '09ab793c4c714c439db0845ef2f883b7');
+INSERT INTO `orderdetail` VALUES ('878212533', '1', '5', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('898335421', '2', '12', '80d32d57454d44c6883c3b7ac9db84d9');
+INSERT INTO `orderdetail` VALUES ('909246798', '2', '11', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('921263097', '1', '3', 'b1b3683fd843442c820fbea57da023e9');
 INSERT INTO `orderdetail` VALUES ('921561038', '1', '4', 'bfb6376324d644b48c2fbf1d5405c1de');
 INSERT INTO `orderdetail` VALUES ('922795615', '1', '2', '29ab3292e4da4c19bbc2c5b4368129dc');
+INSERT INTO `orderdetail` VALUES ('929692467', '2', '42', 'd152b054ff6643ed98dd36cac81cb233');
+INSERT INTO `orderdetail` VALUES ('932772323', '1', '5', '9d55b3f5c2c64ed3b705339a83253514');
 INSERT INTO `orderdetail` VALUES ('967329991', '1', '1', '9ba2d02e267a42688da2366fa064919a');
 INSERT INTO `orderdetail` VALUES ('971561304', '2', '11', '0a6dafcca44a4e72a8bbada08b8f04c6');
 INSERT INTO `orderdetail` VALUES ('975349145', '1', '16', 'e657168507d34076990edddd7dcbf95c');
+INSERT INTO `orderdetail` VALUES ('1018317161', '1', '19', 'c795b13ec37d4255a2bd6d195a6e392c');
 INSERT INTO `orderdetail` VALUES ('1038516413', '4', '21', '21681a0154ff48218d987b7222121470');
+INSERT INTO `orderdetail` VALUES ('1061402079', '1', '11', '5105693f2e654dbeb3669e28334f3765');
 INSERT INTO `orderdetail` VALUES ('1084059275', '1', '18', '4509844c9d384f3499f187b7b9b95856');
+INSERT INTO `orderdetail` VALUES ('1100869890', '1', '2', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
+INSERT INTO `orderdetail` VALUES ('1128304801', '2', '11', 'd152b054ff6643ed98dd36cac81cb233');
 INSERT INTO `orderdetail` VALUES ('1132264714', '1', '13', '561ea2c86ba14e8d9807bdf9edd98cd0');
+INSERT INTO `orderdetail` VALUES ('1148956750', '1', '20', 'e9d9d9be1e334d5d80068f0d49d69283');
 INSERT INTO `orderdetail` VALUES ('1152015454', '6', '12', '80d32d57454d44c6883c3b7ac9db84d9');
 INSERT INTO `orderdetail` VALUES ('1156507932', '1', '3', '452d5ffa223f466e9290d13f827d0f6e');
 INSERT INTO `orderdetail` VALUES ('1165870354', '1', '22', '561ea2c86ba14e8d9807bdf9edd98cd0');
@@ -935,16 +1056,24 @@ INSERT INTO `orderdetail` VALUES ('1250861148', '1', '1', '2e163ceb92164ed2a92fa
 INSERT INTO `orderdetail` VALUES ('1257085161', '1', '14', 'e417be221e0b4ef087247d4b6bcfdcea');
 INSERT INTO `orderdetail` VALUES ('1276799353', '1', '12', '39aa29cc91ea4f5294bf6afe6e7b0f28');
 INSERT INTO `orderdetail` VALUES ('1277517651', '1', '12', 'e038db00b4114d14bd12d267ad9a2e63');
+INSERT INTO `orderdetail` VALUES ('1297753979', '1', '32', 'fc41beee98ab445d832a2a12d75cc5dc');
 INSERT INTO `orderdetail` VALUES ('1300765698', '7', '12', '46eb8fdd61904fe1854be5c9781e5d72');
+INSERT INTO `orderdetail` VALUES ('1311610647', '1', '12', 'e651cf4bb4a54f0dbb874a4fa672c27d');
+INSERT INTO `orderdetail` VALUES ('1311763965', '2', '34', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
+INSERT INTO `orderdetail` VALUES ('1321435711', '1', '25', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
+INSERT INTO `orderdetail` VALUES ('1326880669', '3', '2', 'a55993fe15f64f83b6c0c6d0c33b2b70');
+INSERT INTO `orderdetail` VALUES ('1363720306', '1', '32', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
 INSERT INTO `orderdetail` VALUES ('1379564331', '1', '11', '4b54d66a84df4bcc9a382b469a998431');
 INSERT INTO `orderdetail` VALUES ('1391478751', '2', '6', '3d7a78a6a65c470f8cd13925399d2dbd');
 INSERT INTO `orderdetail` VALUES ('1394765599', '1', '11', '46eb8fdd61904fe1854be5c9781e5d72');
+INSERT INTO `orderdetail` VALUES ('1397467745', '1', '45', 'c0250826404549e0a407385593796225');
 INSERT INTO `orderdetail` VALUES ('1402250765', '4', '21', '21681a0154ff48218d987b7222121470');
 INSERT INTO `orderdetail` VALUES ('1421847655', '3', '14', '2e163ceb92164ed2a92fae1556c97cb0');
 INSERT INTO `orderdetail` VALUES ('1432074735', '1', '17', 'ac5cc204202c4602a0f07e6a2b6e8232');
 INSERT INTO `orderdetail` VALUES ('1435324132', '1', '1', '58fd525805fc4dedaacbb9b5ffde3b62');
 INSERT INTO `orderdetail` VALUES ('1437142626', '1', '11', '36ed0af20c174a4b93de47d8b0c9016c');
 INSERT INTO `orderdetail` VALUES ('1451858668', '1', '12', 'e417be221e0b4ef087247d4b6bcfdcea');
+INSERT INTO `orderdetail` VALUES ('1460267641', '1', '24', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
 INSERT INTO `orderdetail` VALUES ('1475129582', '1', '4', '6277df531ff54b449e194076afadc135');
 INSERT INTO `orderdetail` VALUES ('1476709889', '1', '11', '13ea6a1f212c4f0e8088faddb400246b');
 INSERT INTO `orderdetail` VALUES ('1519829319', '1', '12', '5f4bc4f4c5114ca7a9cb11cdc1661245');
@@ -955,6 +1084,9 @@ INSERT INTO `orderdetail` VALUES ('1652534117', '1', '13', 'e5521e3b268e44b595e9
 INSERT INTO `orderdetail` VALUES ('1666746683', '2', '4', '9794360db79f49f0a8f5a11f50938850');
 INSERT INTO `orderdetail` VALUES ('1671456099', '2', '2', 'd5fad7be1f4944a58445735a1f791f2d');
 INSERT INTO `orderdetail` VALUES ('1688189932', '1', '11', 'dd253d14f85e49f3957d6ded6fce5cfb');
+INSERT INTO `orderdetail` VALUES ('1688245519', '1', '45', '607d71de36884863972b7ed9e58d54b5');
+INSERT INTO `orderdetail` VALUES ('1714482225', '1', '23', 'c53b85928b1d4f5bbde7b3145dc8cd1c');
+INSERT INTO `orderdetail` VALUES ('1734166573', '1', '44', '607d71de36884863972b7ed9e58d54b5');
 INSERT INTO `orderdetail` VALUES ('1751910418', '1', '14', '1018c894b5494dbdab593f9b39067626');
 INSERT INTO `orderdetail` VALUES ('1757470450', '2', '11', '84c225b036124f43ae7e91546df9ebb6');
 INSERT INTO `orderdetail` VALUES ('1824113774', '2', '21', '21681a0154ff48218d987b7222121470');
@@ -968,15 +1100,20 @@ INSERT INTO `orderdetail` VALUES ('1927380600', '1', '14', 'd062ce9bd95d4deb8300
 INSERT INTO `orderdetail` VALUES ('1932705088', '2', '11', '46eb8fdd61904fe1854be5c9781e5d72');
 INSERT INTO `orderdetail` VALUES ('1943195415', '1', '1', '8f8a254a193f497986f48427495d9835');
 INSERT INTO `orderdetail` VALUES ('1954820132', '4', '12', '46eb8fdd61904fe1854be5c9781e5d72');
+INSERT INTO `orderdetail` VALUES ('1964794917', '1', '44', 'c6d846559b3d4570b7f8fe2be2b9eeff');
 INSERT INTO `orderdetail` VALUES ('1993176488', '2', '4', 'e417be221e0b4ef087247d4b6bcfdcea');
 INSERT INTO `orderdetail` VALUES ('2014552138', '1', '1', '3d7a78a6a65c470f8cd13925399d2dbd');
 INSERT INTO `orderdetail` VALUES ('2046929273', '1', '4', '66ce880a32394127b8d5b372cde47d6b');
 INSERT INTO `orderdetail` VALUES ('2054988395', '1', '5', '9528a94e74fd4a2aa0915f5965024bd8');
+INSERT INTO `orderdetail` VALUES ('2056729772', '1', '44', '111ebe305c4345af9a34231cc2dd43ec');
+INSERT INTO `orderdetail` VALUES ('2060689423', '1', '38', 'a4eaf3f327bf4e2d9d64e72e0e7cedaa');
+INSERT INTO `orderdetail` VALUES ('2063110504', '1', '18', 'c6d846559b3d4570b7f8fe2be2b9eeff');
 INSERT INTO `orderdetail` VALUES ('2096100341', '2', '3', '8f8a254a193f497986f48427495d9835');
 INSERT INTO `orderdetail` VALUES ('2120189283', '1', '22', '0b48645bae7940afb1287b4bfda9dc90');
 INSERT INTO `orderdetail` VALUES ('2120818805', '1', '4', 'ac02219154524352bebadf1190c038af');
 INSERT INTO `orderdetail` VALUES ('2122090207', '1', '13', '3607e6d26493419d9bb33006ede01ddd');
 INSERT INTO `orderdetail` VALUES ('2130305770', '2', '1', '0c0efbdf09d14e8eb787fb145064cd3e');
+INSERT INTO `orderdetail` VALUES ('2147406923', '1', '27', '607d71de36884863972b7ed9e58d54b5');
 
 -- ----------------------------
 -- Table structure for `ourprovide`
@@ -1014,7 +1151,7 @@ CREATE TABLE `restaurant` (
   `FullReduce` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `sendFareMore` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`shopId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of restaurant
@@ -1023,6 +1160,33 @@ INSERT INTO `restaurant` VALUES ('1', '小龙蒸肉家常菜', '10', '6', '桥�
 INSERT INTO `restaurant` VALUES ('2', '粥品香坊', '15', '7', '桥西区建东街东侧花鸟鱼虫市场裙112号', '114.539927', '38.003593', '小北河', 'images/seller1.png', '满45减29元', '2元/公里');
 INSERT INTO `restaurant` VALUES ('3', '兰州拉面', '20', '8', '桥西区建东街东侧花鸟鱼虫市场裙112号', '114.52595', '37.997935', '寇雄', 'images/ss.jpg', '满45减29元', '2元/公里');
 INSERT INTO `restaurant` VALUES ('4', '熊熊蛋糕店', '30', '9', '桥西区建东街东侧花鸟鱼虫市场裙112号', '114.523506', '37.988835', '妙丽', 'images/seller8.png', '满90减2', '4元/公里');
+INSERT INTO `restaurant` VALUES ('5', '老爹汉堡店', '20', '6', '桥西区建东街东侧花鸟鱼虫市场裙112号', '114.53034', '37.996234', '董莹', 'images/seller1.png', '满90减2', '4元/公里');
+INSERT INTO `restaurant` VALUES ('6', '海底捞', '50', '10', '桥西区建东街东侧花鸟鱼虫市场裙112号', '114.54034', '37.996234', null, null, null, null);
+INSERT INTO `restaurant` VALUES ('7', '火社', '50', '10', null, '114.519967', '38.010218', null, null, null, null);
+INSERT INTO `restaurant` VALUES ('8', '汉堡王', '12', '12', null, '114.533709', '37.980688', null, null, null, null);
+INSERT INTO `restaurant` VALUES ('9', '春园烤肉', '12', '12', null, '114.52336', '37.980574', null, null, null, null);
+INSERT INTO `restaurant` VALUES ('10', '大鹏烧烤', '12', '12', null, '114.528535', '37.978242', null, null, null, null);
+
+-- ----------------------------
+-- Table structure for `robot`
+-- ----------------------------
+DROP TABLE IF EXISTS `robot`;
+CREATE TABLE `robot` (
+  `foodid` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `foodSteptext` varchar(1200) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`foodid`)
+) ENGINE=InnoDB AUTO_INCREMENT=41645 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of robot
+-- ----------------------------
+INSERT INTO `robot` VALUES ('7533', '麻婆豆腐', '主料；豆腐一块400克、牛肉末50克；调料：豆瓣酱30克、豆豉20克、盐2克、鸡粉2克、酱油15克、黄酒10克、大蒜末20克、肉汤300ml、水淀粉适量、花生油30克；配料：青蒜末30克、花椒面1克、香菜末5克。;先把豆腐切成2厘米见方的丁。;在清水里放少许盐。;把切好的豆腐在水中。;浸泡15分钟,然后捞出备用。;炒勺上火烧热，注入适量花生油便炒肉末。;肉末变色后下入郫县豆瓣酱煸炒;煸炒出香味后下入豆豉煸炒;然后烹入黄酒炒匀。;然后烹入黄酒炒匀。;炒香以上材料后倒入肉汤煮开。;然后放入适量的酱油。;用盐调味然后下入豆腐煮开;豆腐煮大约3-5分钟,然后放入少许鸡粉提鲜;用水淀粉勾芡。;此时要边摇锅边用手勺推动锅底，使豆腐不至糊锅，当淀粉彻底糊化后便可出锅码盘。;装盘以后趁热均匀的撒上一层花椒面。');
+INSERT INTO `robot` VALUES ('9227', '糖醋排骨', '小排500克焯水后，煮三十分钟，肉汤可以煮面条，别倒掉了。;用一汤匙料酒，一汤匙生抽，半汤匙老抽，二汤匙香醋（不是白醋）腌渍20分钟。;捞出洗净控水备用，炸制金黄，油别放多，可以省油，只要翻身的勤就好了。;锅内放排骨，腌排骨的水，三汤勺白糖（大胆的放糖吧，三汤匙，别怕多）。半碗肉汤大火烧开，调入半茶匙盐提味。;小火焖十分钟大火收汁，收汁的时候最后加一汤匙香醋，那个酸甜口就出来了。;临出锅撒葱花芝麻，少许味精。');
+INSERT INTO `robot` VALUES ('12378', '红烧牛肉', '牛肉切块焯水捞出，土豆胡萝卜切滚刀块;炒糖色,牛肉成红褐色，糖色的颜色就决定红烧后的颜色了;放香料炒出香味，生抽老抽一比一各一汤匙，老抽可以少点，十三香，料酒一汤匙。小火焖一下，让牛肉上上色。;放入胡萝卜和土豆，翻炒均匀，对温水;转砂锅炖一个小时调盐味。继续炖一个小时;最后放味精提味即可');
+INSERT INTO `robot` VALUES ('16872', '可乐鸡翅', '材料：鸡翅中、可乐一听、八角、姜、葱段、料酒;鸡翅洗净，入葱姜水中煮沸捞出，沥干水份。;锅内放少许油烧热，放入鸡翅。;煎至外皮两面泛黄。;倒入可乐没过鸡翅即可。;');
+INSERT INTO `robot` VALUES ('37328', '宫保鸡丁', '鸡胸肉用刀背拍一下，切成大拇指甲大小的丁;用料酒一汤匙，食用油半汤匙，白胡椒半茶匙，盐半茶匙，淀粉一茶匙，腌渍十分钟入味;葱切段;锅里放油，七八成热下鸡丁炒变白;放入干辣椒，葱和一茶匙花椒粉，炒出香味;兑入料汁，大火炒到粘稠干松即可;关火，拌入花生米即可');
+INSERT INTO `robot` VALUES ('41644', '红烧肉', '五花肉切麻将大小的块，冲洗干净后，放一汤匙料酒，浸泡一小时。捞出来沥干。;锅里放油煸炒肉块到微黄。;放入干辣椒，草果，八角，姜，炒出香味。;放料酒两汤匙，炒几下，再放老抽，生抽，炒匀。;放入开水，淹没肉，转入砂锅煨两个小时调入盐。;煨到酥烂的五花肉，放冰糖大火收汁，晃动锅，不要翻动。;到汤汁均匀的裹在肉上就好了！放点味精提味。');
 
 -- ----------------------------
 -- Table structure for `user`
@@ -1044,6 +1208,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 INSERT INTO `user` VALUES ('110', 'dy', '123', '12', '12', 'qwe', '');
 INSERT INTO `user` VALUES ('111', 'we', '123', '12', '12', 'wrqew', '女');
+INSERT INTO `user` VALUES ('11111111111', '11', '11', '11', '11', '11', '11');
+INSERT INTO `user` VALUES ('12345678901', 'doing', '123', '12', '12', '12', '12');
 INSERT INTO `user` VALUES ('13946680120', 'Doing', '123', '12', '', 'gfsdgfdsg', '男');
 INSERT INTO `user` VALUES ('15226507930', 'czc', '123', '2018��12��13��-11:46:38', 'img', 'ad', null);
 INSERT INTO `user` VALUES ('15226507931', 'dsads', 'sfdsf', 'scaczx', 'xz', 'zxc', 'xzc');

@@ -67,10 +67,6 @@ public class OrderContentController {
 		
 		Object obj=session.getAttribute("orderuuid");
 		int count3=Integer.parseInt(count);
-		System.out.println("count数量"+count3);
-		if(count3==0) {
-			System.out.println("count数量"+count3);
-		}
 		if (obj!=null) {
 			String orderuuid = (String)obj;
 		if(count!=null&&!count.equals("")&&orderuuid!=null&&!orderuuid.equals("")) {

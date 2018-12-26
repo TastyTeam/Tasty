@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sun.accessibility.internal.resources.accessibility;
 import com.tasty.entity.OrderDetail;
 import com.tasty.mapdishes.service.AddCartServiceImpl;
+import com.tasty.ordercontent.service.OrderContentInsertService;
+import com.tasty.ordercontent.service.OrderContentSetCountService;
 
 /**
  * 
@@ -27,6 +29,8 @@ import com.tasty.mapdishes.service.AddCartServiceImpl;
 public class AddCartController {
 	@Resource
 	private AddCartServiceImpl addCartServiceImpl;
+	@Resource
+	public OrderContentSetCountService ordercontentsetcountservice;
 	@RequestMapping("/add")
 	public void add(HttpServletRequest request,HttpServletResponse response) {
 		String fastfoodid=request.getParameter("fastfoodId");
@@ -73,10 +77,13 @@ public class AddCartController {
 				int fastfoodId=Integer.parseInt(fastfoodid);
 				java.util.Random r=new java.util.Random();
 				int orderDetailId=r.nextInt();
-				System.out.println(orderDetailId);
-				System.out.println("33333333");
-				addCartServiceImpl.setorderdetail(od,fastfoodNumber,fastfoodId,orderDetailId);
-				addCartServiceImpl.setshopIdTOMyOrder(od, shopid,phone);
+				if(addCartServiceImpl.getfoodexit(od,fastfoodId)) {
+					fastfoodNumber=fastfoodNumber+1;
+					ordercontentsetcountservice.setcount(fastfoodNumber,od,fastfoodId);
+				}else {
+					addCartServiceImpl.setorderdetail(od,fastfoodNumber,fastfoodId,orderDetailId);
+					addCartServiceImpl.setshopIdTOMyOrder(od, shopid,phone);
+				}
 			}else {
 			session.setAttribute("phone", phone);
 			int fastfoodNumber=Integer.parseInt(count);

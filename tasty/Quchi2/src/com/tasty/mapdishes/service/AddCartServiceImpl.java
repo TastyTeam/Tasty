@@ -30,5 +30,9 @@ public class AddCartServiceImpl {
 		addCartDaoImpl.setMyOrderShopId(orderuuid,shopId);
 		
 	}
+	public boolean getfoodexit(String od, int fastfoodid) {
+		return addCartDaoImpl.getfoodexit(od,fastfoodid);
+		
+	}
 
 }
