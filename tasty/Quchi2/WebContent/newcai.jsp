@@ -82,6 +82,19 @@
 	vertical-align: top;
 }
 </style>
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
 <body>
 
 	<header>
@@ -119,7 +132,7 @@
             <div class="sec_menu">
                             <ul>
                                 <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-                                <li><a>欢迎，</a></li>&nbsp;
+                                <li><a></a></li>&nbsp;
                                 <li><a>${uname}</a></li>&nbsp;
                                 <li onclick = "f('sub_menu_1')">
                                     <div class="btn-group">
@@ -276,13 +289,12 @@
 					<script type="text/javascript">
 						$(function(){
 							$("#star_grade1").click(function(){
-								url="${ctx}/fooddetail?foodId=1";
-								var mystargrade=$(".grade").html();
-								 alert(mystargrade+"评价成功"); 
-				            	params="stargrade="+mystargrade;
-				            	 $.get(url,params,function(d){
-				            		
-				            	}) 
+				            	var mystargrade=$(".grade").html();
+				            	//alert(mystargrade);
+				            	var url="/Quchi2/grade";
+								$.get(url,{"mystargrade":mystargrade+";${food.foodId}"},function(d){ 
+								//	alert("成功");
+								})
 							})						
 						})	
 					</script>

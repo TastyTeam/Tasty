@@ -47,9 +47,11 @@ public class OurProvideControl {
 				String phone=(String)session.getAttribute("phone");
 				if(phone!=null&&!phone.equals("")) {
 					String a = phone;
+					System.out.println("a"+a);
 					try {
 						//写自己的文档路径默认eclipse工作目录下
-						String[] arg = new String[] { "python", "D:/CollaborativeFilter.py", a };
+						System.out.println("oythionb");
+						String[] arg = new String[] { "python", "E:/CollaborativeFilter.py", a };
 						Process proc = Runtime.getRuntime().exec(arg);// 执行py文件
 						BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
 						String line = null;

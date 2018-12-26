@@ -29,6 +29,19 @@ content="汇聚千万美食爱好者的原创社区，创建属于自己的美�
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="css/default.css">
 <link rel="stylesheet" href="css/button.css">
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
 <style>
 .header-nav {
 	background-color: black;

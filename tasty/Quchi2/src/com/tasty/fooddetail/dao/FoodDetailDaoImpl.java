@@ -45,6 +45,7 @@ public class FoodDetailDaoImpl {
 
 	public Boolean saveComment(int foodId,String phone,String changedgrade) {
 		BufferedWriter bos = null;
+		System.out.println("save"+changedgrade);
 		try {
 			//写自己的文档路径默认eclipse工作目录下
 			bos=new BufferedWriter(new FileWriter("E:\\type.csv",true));

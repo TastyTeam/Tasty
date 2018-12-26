@@ -82,6 +82,19 @@
       }
 
 </style>
+<script type="text/javascript"> 
+ function f(str){ 
+        var sub_menu = document.getElementById(str); 
+        var dis_v = sub_menu.style.display; 
+          
+        if(dis_v == "block") 
+          sub_menu.style.display = "none"; 
+        else 
+          sub_menu.style.display = "block"; 
+            
+      } 
+
+</script>
 </head>
 <body>
 <header>
@@ -215,7 +228,7 @@
 var id =0;
 function PreviewImage(imgFile) {
 
-    var pattern =/(\.*.jpg$)|(\.*.png$)/;
+    var pattern =/(\.*.jpg$)|(\.*.png$)|(\.*.gif$)|(\.*.jpeg$)/;
     if (!pattern.test(imgFile.value)) {
 
         alert("系統夂支持jpg/jpeg/png/gif/bmp格式的照片! "); 

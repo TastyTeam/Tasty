@@ -109,13 +109,13 @@
                     
                         <ul class="main-submenu-info main-submenu-first">
                         <c:forEach var="privateorderfood" items="${indexfood}">
-                                <li><a href="#">
+                                <li><a href="fooddetail?foodId=${privateorderfood.foodId}">
                                     <div class="food-name">
                                         <p>${privateorderfood.foodName}</p>
                                         <p>Rose fried broccoli</p>
                                     </div>
                                     <div class="food-price">
-                                        <p>￥<span>25</span></p>
+                                        <!-- <p>￥<span>25</span></p> -->
                                     </div>
                                     <div class="img-bg"></div>
                                     <img width="330px" height="330px" src="${privateorderfood.title}"></a></li>

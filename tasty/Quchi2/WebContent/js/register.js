@@ -4,7 +4,7 @@ window.onload=function(){
       var timer=null;
       var time=10;
       document.getElementById('yanzheng').onclick=function(){
-    	  alert("确定获取验证码？");
+    	  //alert("确定获取验证码？");
     	  var phone=$("#iphone").val();
     	/*	var yzm=$("yzm").val();*/
     			$.ajax({

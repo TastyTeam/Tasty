@@ -83,7 +83,7 @@
             <div class="sec_menu">
                             <ul>
                                 <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
-                                <li><a>欢迎，</a></li>&nbsp;
+                                <li><a></a></li>&nbsp;
                                 <li><a>${uname}</a></li>&nbsp;
                                 <li onclick = "f('sub_menu_1')">
                                     <div class="btn-group">
