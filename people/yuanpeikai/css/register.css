@@ -1,0 +1,42 @@
+ #myAlert2{
+    display: none;
+  }
+  a{font-size:16px}
+  a:link{color:#ccc;text-decoration:none;}
+  a:active{color:#ccc;}
+  a:visited{color:#ccc;text-decoration:none;}
+  a:hover{color:#ccc;text-decoration:none;}
+  .logo{
+    float: left;
+    margin-top: -25%;
+    margin-left: 17.5%;
+  }
+  .wangjimima{
+    float: left;
+    margin-left: 5px;
+    margin-top: 0px;
+  }
+  .qita{
+    float: left;
+    margin-left: 150px;
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+  #yanzheng{
+    position: relative;
+    top:-30px;
+    left: 100px;
+  }
+  .box{
+    max-height:400px;
+    position:relative;
+    left: 0px;
+    top:0px;
+    margin-top: -50px;
+  }
+  .container{
+    text-align: center !important;
+  }
+  form{
+    margin:250px auto;
+  }
