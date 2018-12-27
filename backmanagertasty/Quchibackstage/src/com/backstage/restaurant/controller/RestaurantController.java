@@ -77,7 +77,7 @@ public class RestaurantController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveRestaurant(HttpServletRequest request) {
 		// 得到餐厅所有信息
-		String restaurantId = request.getParameter("erestaurantId");
+	
 		String restaurantname = request.getParameter("restaurantname");
 		String restauranttime = request.getParameter("restauranttime");
 		String restaurantfare = request.getParameter("restaurantfare");
@@ -86,9 +86,12 @@ public class RestaurantController {
 		String restaurantfullreduce = request.getParameter("restaurantfullreduce");
 		String restaurantfaredetail = request.getParameter("restaurantfaredetail");
 		String erestaurantId = request.getParameter("erestaurantId");
+		String longitude=request.getParameter("longitude");
+		String latitude=request.getParameter("latitude");
+		String picture=request.getParameter("picture");
 		//更新数据
 		 restaurantserviceimpl.updateRestaurantInformation(erestaurantId,restaurantfaredetail,
-				 restaurantname,restauranttime,restaurantfare,restaurantintroduce,restaurantlawyer,restaurantfullreduce);
+				 restaurantname,restauranttime,restaurantfare,restaurantintroduce,restaurantlawyer,restaurantfullreduce,longitude, latitude,picture);
 		// 对于得到的list餐厅处理
 		return "redirect:restaurant";
 
@@ -104,6 +107,8 @@ public class RestaurantController {
 			String restaurantlawyer = request.getParameter("restaurantlawyer");
 			String restaurantfullreduce = request.getParameter("restaurantfullreduce");
 			String restaurantfaredetail = request.getParameter("restaurantfaredetail");
+			String longitude=request.getParameter("longitude");
+			String latitude=request.getParameter("latitude");
 			//配送时间和配诉费判断
 			boolean isNum=restauranttime.matches("[0-9]+");
 			boolean isNum2=restaurantfare.matches("[0-9]+");
@@ -112,7 +117,7 @@ public class RestaurantController {
 			}
 			//更新数据
 			 restaurantserviceimpl.saveRestaurantInformation(restaurantfaredetail,
-					 restaurantname,restauranttime,restaurantfare,restaurantintroduce,restaurantlawyer,restaurantfullreduce);
+					 restaurantname,restauranttime,restaurantfare,restaurantintroduce,restaurantlawyer,restaurantfullreduce,longitude, latitude);
 			// 对于得到的list餐厅处理
 			return "redirect:restaurant";
 

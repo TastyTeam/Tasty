@@ -62,6 +62,14 @@
         <td class="tableleft">店铺介绍</td>
         <td ><input placeholder="可以介绍一下你的店铺" type="text" name="restaurantintroduce" value="${erestaurant.shopIntroduce }"/></td>
     </tr>  
+    <tr>
+        <td class="tableleft">经度</td>
+        <td ><input placeholder="经度" type="text" name="latitude" value="${erestaurant.latitude}"/></td>
+    </tr>  
+    <tr>
+        <td class="tableleft">纬度</td>
+        <td ><input placeholder="纬度" type="text" name="longitude" value="${erestaurant.longitude}"/></td>
+    </tr>  
      <tr>
         <td width="10%" class="tableleft">负责人</td>
         <td><input placeholder="输入店铺负责人" type="text" name="restaurantlawyer" value="${erestaurant.lawyerpeople }"/></td>

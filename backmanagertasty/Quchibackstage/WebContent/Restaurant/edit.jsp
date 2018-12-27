@@ -74,6 +74,18 @@
         <td><input type="text" name="restaurantfaredetail" value="${erestaurant.sendFareMore }"/></td>
     </tr>
     <tr>
+        <td class="tableleft">经度</td>
+        <td ><input placeholder="经度" type="text" name="latitude" value="${erestaurant.latitude}"/></td>
+    </tr>  
+    <tr>
+        <td class="tableleft">纬度</td>
+        <td ><input placeholder="纬度" type="text" name="longitude" value="${erestaurant.longitude}"/></td>
+    </tr>  
+     <tr>
+        <td class="tableleft">图片默认</td>
+        <td ><input placeholder="图片" type="text" name="picture" value="${erestaurant.shopImg}"/></td>
+    </tr>  
+    <tr>
         <td class="tableleft">状态</td>
         <td >
             <input type="radio" name="status" value="1" checked/> 运营

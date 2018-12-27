@@ -38,19 +38,19 @@ public class RestaurantServiceImpl {
 	//新建Restaurant并存入信息
 	public void updateRestaurantInformation(String erestaurantId, String restaurantfaredetail,
 			String restaurantname, String restauranttime, String restaurantfare, String restaurantintroduce,
-			String restaurantlawyer, String restaurantfullreduce) {
+			String restaurantlawyer, String restaurantfullreduce,String longitude,String latitude,String picture) {
 		restaurantdaoimpl.updateRestaurant(erestaurantId,restaurantfaredetail,
 				 restaurantname,restauranttime,restaurantfare,restaurantintroduce,
-				 restaurantlawyer,restaurantfullreduce);
+				 restaurantlawyer,restaurantfullreduce,longitude,latitude,picture);
 
 			
 	}
 	//保存一个新的商家
 	public void saveRestaurantInformation(String restaurantfaredetail, String restaurantname, String restauranttime,
-			String restaurantfare, String restaurantintroduce, String restaurantlawyer, String restaurantfullreduce) {
+			String restaurantfare, String restaurantintroduce, String restaurantlawyer, String restaurantfullreduce,String longitude,String latitude) {
 		restaurantdaoimpl.saveRestaurant(restaurantfaredetail,
 				 restaurantname,restauranttime,restaurantfare,restaurantintroduce,
-				 restaurantlawyer,restaurantfullreduce);
+				 restaurantlawyer,restaurantfullreduce,longitude,latitude);
 
 		
 	}
