@@ -1,4 +1,4 @@
-﻿package com.tasty.ordercontent.control;
+package com.tasty.ordercontent.control;
 
 import java.io.IOException;
 import java.util.List;
