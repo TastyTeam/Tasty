@@ -6,6 +6,7 @@ import requests#导入request模块
 import json
 import urllib.request
 import sys
+import CollaborativeFilter
 
 class Kinds:
     food_step=[]
@@ -16,10 +17,10 @@ class Kinds:
 
 def db():
      #打开数据库连接
-    db= pymysql.connect(host="localhost",user="root",password="",db="py",port=3306)
+    db= pymysql.connect(host="localhost",user="root",password="",db="tasty",port=3306)
     # 使用cursor()方法获取操作游标
     cur = db.cursor()
-    sql = "select * from my where title = '%s'"% tmp[0]
+    sql = "select * from robot where title = '%s'"% tmp[0]
     results=[]
     try:
         cur.execute(sql) 	#执行sql语句
@@ -125,14 +126,40 @@ def weather_day(your_list):
             day(results,6)
     else:
         print("查询失败")
+        
+def recommend(iphone):
+    arr=[]
+    print('为您推荐菜品如下：')
+    userCF =CollaborativeFilter.UserBasedCF()
+    userCF.get_dataset('E:/type.csv')
+    userCF.calc_user_sim()
+    arr=userCF.evaluate2(iphone)
+    #打开数据库连接
+    db= pymysql.connect(host="localhost",user="root",password="",db="tasty",port=3306)
+    try:   
+        results=[]
+        for i in arr:
+            # 使用cursor()方法获取操作游标
+            cur = db.cursor()
+            sql = "select foodName from food where foodid = '%s'"% i
+            cur.execute(sql) 	#执行sql语句
+            results = cur.fetchall()	#获取查询的所有记录
+            print(results[0][0])
+    except Exception as e:
+        raise e
+    finally:
+        db.close()	#关闭连接
+
+
 # 开始对话
 
 
 
 
 all=['红烧牛肉','宫保鸡丁','麻婆豆腐','糖醋排骨','可乐鸡翅','红烧肉']
-jieba.load_userdict('D:/newcai.txt')
+jieba.load_userdict('E:/caipu.txt')
 kind=Kinds();
+iphone=sys.argv[2]
 
 kind.your_input=str(sys.argv[1])
 your_list = jieba.lcut(kind.your_input, cut_all=True)
@@ -146,7 +173,8 @@ elif '天气' in your_list:
 elif '几号' in your_list or '日期' in your_list:
     date(your_list)
 elif '推荐' in your_list:
-    print('为您推荐菜品如下：')
+    recommend(iphone)
+    
 elif '几点' in your_list or '时间' in your_list:
     time(your_list)
 else:
