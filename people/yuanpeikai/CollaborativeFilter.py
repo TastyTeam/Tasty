@@ -1,4 +1,4 @@
-# 基于用户的协同过滤推荐算法实现
+﻿# 基于用户的协同过滤推荐算法实现
 import math
 from operator import itemgetter
 import sys
@@ -80,16 +80,24 @@ class UserBasedCF():
                 rank[article] += wuv
         return sorted(rank.items(), key=itemgetter(1), reverse=True)[0:N]
 
-
     def evaluate(self,user):
         rec_articles = self.recommend(user)
         for i in range (len(rec_articles)):
             print(rec_articles[i][0])
-            
+
+
+    def evaluate2(self,user):
+        arr=[]
+        rec_articles = self.recommend(user)
+        for i in range (len(rec_articles)):
+            arr.insert(i,rec_articles[i][0])
+            #print(rec_articles[i][0])
+        return arr; 
+
 if __name__ == '__main__':
-    rating_file = 'D:/ml-latest-small/type.csv'
+    rating_file = 'E:/type.csv'
     userCF = UserBasedCF()
     userCF.get_dataset(rating_file)
     userCF.calc_user_sim()
     userCF.evaluate(sys.argv[1])
-    #userCF.evaluate('1010000000000')
+    #userCF.evaluate('15226507030')
