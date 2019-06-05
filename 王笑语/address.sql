@@ -1,0 +1,7 @@
+INSERT INTO `address` VALUES (1, '河北科技大学', 114.52778, 37.983333);
+INSERT INTO `address` VALUES (2, '河北师范大学', 114.5271, 38.003408);
+INSERT INTO `address` VALUES (3, '万达广场', 114.551556, 38.029654);
+INSERT INTO `address` VALUES (4, '动物园', 114.312388, 38.070036);
+INSERT INTO `address` VALUES (5, '怀特商城', 114.536656, 38.028589);
+INSERT INTO `address` VALUES (6, '乐汇商城', 114.458988, 38.039883);
+INSERT INTO `address` VALUES (7, '勒泰商场', 114.513185, 38.050879);
