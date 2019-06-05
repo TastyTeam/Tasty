@@ -1,0 +1,17 @@
+INSERT INTO `foodtype` VALUES (1, '菜式菜品', NULL);
+INSERT INTO `foodtype` VALUES (2, '应用场景', NULL);
+INSERT INTO `foodtype` VALUES (3, '季节饮食', NULL);
+INSERT INTO `foodtype` VALUES (5, '小吃', 1);
+INSERT INTO `foodtype` VALUES (6, '热菜', 1);
+INSERT INTO `foodtype` VALUES (7, '烘焙', 1);
+INSERT INTO `foodtype` VALUES (8, '春季食谱', 3);
+INSERT INTO `foodtype` VALUES (9, '夏季食谱', 3);
+INSERT INTO `foodtype` VALUES (10, '秋季食谱', 3);
+INSERT INTO `foodtype` VALUES (11, '午餐', 2);
+INSERT INTO `foodtype` VALUES (12, '晚餐', 2);
+INSERT INTO `foodtype` VALUES (13, '下午茶', 2);
+INSERT INTO `foodtype` VALUES (17, '饮品', 1);
+INSERT INTO `foodtype` VALUES (18, '汤类', 1);
+INSERT INTO `foodtype` VALUES (19, '冬季食谱', 3);
+INSERT INTO `foodtype` VALUES (20, '中式宴请', 2);
+INSERT INTO `foodtype` VALUES (21, '家常菜', 2);
