@@ -1,0 +1,10 @@
+INSERT INTO `restaurant` VALUES (1, '小龙蒸肉家常菜', 10, 6, '桥西区建东街东侧花鸟鱼虫市场裙112号', 114.520201, 37.996911, '徐香丽', 'images/s.png', '满20减5元', '4元/公里');
+INSERT INTO `restaurant` VALUES (2, '粥品香坊', 15, 7, '桥西区建东街东侧花鸟鱼虫市场裙112号', 114.539927, 38.003593, '小北河', 'images/seller1.png', '满45减29元', '2元/公里');
+INSERT INTO `restaurant` VALUES (3, '兰州拉面', 20, 8, '桥西区建东街东侧花鸟鱼虫市场裙112号', 114.52595, 37.997935, '寇雄', 'images/ss.jpg', '满45减29元', '2元/公里');
+INSERT INTO `restaurant` VALUES (4, '熊熊蛋糕店', 30, 9, '桥西区建东街东侧花鸟鱼虫市场裙112号', 114.523506, 37.988835, '妙丽', 'images/seller8.png', '满90减2', '4元/公里');
+INSERT INTO `restaurant` VALUES (5, '老爹汉堡店', 20, 6, '桥西区建东街东侧花鸟鱼虫市场裙112号', 114.53034, 37.996234, '董莹', 'images/seller1.png', '满90减2', '4元/公里');
+INSERT INTO `restaurant` VALUES (6, '海底捞', 50, 10, '桥西区建东街东侧花鸟鱼虫市场裙112号', 114.54034, 37.996234, NULL, NULL, NULL, NULL);
+INSERT INTO `restaurant` VALUES (7, '火社', 50, 10, NULL, 114.519967, 38.010218, NULL, NULL, NULL, NULL);
+INSERT INTO `restaurant` VALUES (8, '汉堡王', 12, 12, NULL, 114.533709, 37.980688, NULL, NULL, NULL, NULL);
+INSERT INTO `restaurant` VALUES (9, '春园烤肉', 12, 12, NULL, 114.52336, 37.980574, NULL, NULL, NULL, NULL);
+INSERT INTO `restaurant` VALUES (10, '大鹏烧烤', 12, 12, NULL, 114.528535, 37.978242, NULL, NULL, NULL, NULL);
