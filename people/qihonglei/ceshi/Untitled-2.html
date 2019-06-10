@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    2 <head>
+    3   <meta charset="utf-8">
+    4   <title></title>
+    5 </head>
+    6 
+    7 <body>
+        
+   <div class="user_header">
+    <a class="user_a" href="javascript:void(0);"><label runat="server" id="user"></label><i class="user_arrow"></i></a>
+    <div class="userInfo">
+      <ul class="user_ul">
+        <li><a href="#"><i class="user_perInfo"></i>个人信息</a></li>
+        <li><a href="#"><i class="user_lock"></i>锁定屏幕</a></li>
+        <li><a href="#"><i class="user_key"></i>退出</a></li>
+     </ul>
+     </div>
+    </div>
+                    <script type="text/javascript" src="js/jquery.min.js"></script>
+                    <script type="text/javascript"> 
+         <script>          
+                var timer;
+                $(".user_header a").mouseover(function () {
+                    clearTimeout(timer);
+                    $(".userInfo").show();
+                });
+                $(".user_header a").mouseout(function () {
+                    timer = setTimeout(function () {
+                        $(".userInfo").hide();
+                    }, 500);
+                });
+                $(".user_ul").mouseover(function () {
+                    clearTimeout(timer);
+                });
+                $(".user_ul").mouseout(function () {
+                    $(".userInfo").hide();
+                });
+                </script>
+        </body>
+        </html>
+     
+
+
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <title>美食城</title>
+
+    <link rel="stylesheet" href="../../../pro2/default.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="author" content="www.yunalading.com" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="default.css">
+
+
+</head>
+<body style="height: 100%;">
+    <header>
+        <div class="header-nav">
+            <div role="navigation">
+                <a href="#" rel="home" class="hd-logo" title="美食餐厅"><img src="images/logo.png"></a>
+                <ul class="hd-nav">
+                    <li class="search-box-li">
+                        <div><input type="text" name="search-keyword" placeholder="输入关键词" form="search-keyword"><i
+                                class="iconfont search-submit">&#xe617;</i></div>
+                        <i class="search-exit"></i></li>
+                    <li><a href="index.html" name="index">网站首页<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                    <li><a href="productlist.html" name="productlist">私人订制<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                    <li><a href="article.html" name="article">美食资讯<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                    <li><a href="contact.html" name="contact">果蔬商城<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                    <li><a href="about.html" name="about">趣吃导航<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                    <li><a href="about.html" name="about">美食分享<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                </ul>
+    
+                <div class="motai"></div>
+                <div class="dropdown">
+                <ul>
+                    <li><a><i class="iconfont search-botton">&#xe617;</i></a></li>
+                    <li><a>你好</a></li>&nbsp;&nbsp;
+                    <li><a>用户名名名</a>
+                        <div class="userInfo">
+                            <ul class="user_ul">
+                              <li><a href="#"><i class="user_perInfo"></i>个人信息</a></li>
+                              <li><a href="#"><i class="user_lock"></i>锁定屏幕</a></li>
+                              <li><a href="#"><i class="user_key"></i>退出</a></li>
+                           </ul>
+                           </div>
+                    </li>
+                    <li><a><i class="iconfont nav-bottom">&#xe61f;</i></a></li>
+                </ul>
+                </div>
+            </div>
+            <div class="user_header">
+                <a class="user_a" href="javascript:void(0);"><label runat="server" id="user"></label><i class="user_arrow">aaa</i></a>
+                <div class="userInfo">
+                  <ul class="user_ul">
+                    <li><a href="#"><i class="user_perInfo"></i>个人信息</a></li>
+                    <li><a href="#"><i class="user_lock"></i>锁定屏幕</a></li>
+                    <li><a href="#"><i class="user_key"></i>退出</a></li>
+                 </ul>
+                 </div>
+                </div>
+                
+
+             
+            <div class="search-box">
+                <form method="post" action="#" id="search-keyword">
+                    <input type="text" name="search-keyword" placeholder="请输入您的内容">
+                    <span>
+                        </span>
+                </form>
+    
+            </div>
+    
+        </div>
+    
+        <div class="header-carousel container">
+    
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+    
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/banner.jpg" style="width:100%" alt="First slide">
+                    </div>
+                    <div class="item">
+                        <img src="images/banner3.jpg" style="width:100%;" alt="Second slide">
+                    </div>
+                    <div class="item">
+                        <img src="images/banner5.jpg" style="width:100%;" alt="Third slide">
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="carousel-control left" href="#myCarousel"
+                   data-slide="prev"></a>
+                <a class="carousel-control right" href="#myCarousel"
+                   data-slide="next"></a>
+            </div>
+    
+        </div>
+    </header>
+ <script>
+      var timer;
+    $(".user_header a").mouseover(function () {
+        clearTimeout(timer);
+        $(".userInfo").show();
+    });
+    $(".user_header a").mouseout(function () {
+        timer = setTimeout(function () {
+            $(".userInfo").hide();
+        }, 500);
+    });
+    $(".user_ul").mouseover(function () {
+        clearTimeout(timer);
+    });
+    $(".user_ul").mouseout(function () {
+        $(".userInfo").hide();
+    });
+    </script>
+</body></html>

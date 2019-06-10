@@ -1,0 +1,27 @@
+
+   <div class="user_header">
+    <a class="user_a" href="javascript:void(0);"><label runat="server" id="user"></label><i class="user_arrow"></i></a>
+    <div class="userInfo">
+      <ul class="user_ul">
+        <li><a href="#"><i class="user_perInfo"></i>个人信息</a></li>
+        <li><a href="#"><i class="user_lock"></i>锁定屏幕</a></li>
+        <li><a href="#"><i class="user_key"></i>退出</a></li>
+     </ul>
+     </div>
+    </div>
+var timer;
+$(".user_header a").mouseover(function () {
+    clearTimeout(timer);
+    $(".userInfo").show();
+});
+$(".user_header a").mouseout(function () {
+    timer = setTimeout(function () {
+        $(".userInfo").hide();
+    }, 500);
+});
+$(".user_ul").mouseover(function () {
+    clearTimeout(timer);
+});
+$(".user_ul").mouseout(function () {
+    $(".userInfo").hide();
+});
