@@ -22,14 +22,14 @@ public class robot {
 	@RequestMapping("/robot")
 	public String cart(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=utf-8");
-		
+		response.setContentType("text/html;charset=utf-8");	
 		//接受参数
-		String username = request.getParameter("username");	
+		String username = request.getParameter("username");
+		String iphone=(String)request.getSession().getAttribute("phone");
 		try {
 			//写自己的文档路径默认eclipse工作目录下
-			String[] arg = new String[] { "python", "E:\\robot.py", username};
-			Process proc = Runtime.getRuntime().exec(arg);// 执行py文件
+			String[] arg = new String[] { "E://anaconda//python", "D://robot.py", username,iphone};
+			Process proc = Runtime.getRuntime().exec(arg);
 			BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream(),"GBK"));
 			String line = null;
 			while ((line = in.readLine()) != null) {

@@ -110,7 +110,7 @@
                 <li><a href="index.jsp" name="index">${lists.get(0).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="privateorder" name="productlist">${lists.get(1).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="article" name="article">${lists.get(2).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
-                <li><a href="shop_index.jsp" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
+                <li><a href="searchindex" name="contact">${lists.get(3).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="map" name="about">${lists.get(4).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
                 <li><a href="communities?pageNum=1" name="about">${lists.get(5).name }<span><i class="iconfont ">&#xe6aa;</i></span></a></li>
             </ul>
@@ -324,29 +324,24 @@
 				</div>
 			</div>
 			<div class="space_right">
-				<div id='div-gpt-ad-1508681717585-2'
-					style='height: 250px; width: 300px;'>
-					<script>
-						googletag.cmd.push(function() {
-							googletag.display('div-gpt-ad-1508681717585-2');
-						});
-					</script>
+				<div>
 					<div class="mo"
 						style="background: rgba(0, 0, 0, 0) url(images/biao.png) no-repeat scroll left center;">
-						<h3 style="margin-left: 6px; text-indent: 2px;">小窍门</h3>
+						<h3 style="margin-left: 6px; text-indent: 2px;">推荐菜品</h3>
 					</div>
 					<div class="recipeTip"
-						style="text-indent: 2em; width: 300px; height: auto;">
-						${food.foodTip}
+						style="text-indent: 2em; width: 300px; height: auto;">						
+						<!--推荐菜品  -->
+						<c:forEach items="${foodList }" var="foodItem">
+                			<li><a href="fooddetail?foodId=${foodItem.foodId }"><img src="${foodItem.title }" alt="" width="220px" height="200px"></span>
+                    		<h3 style="text-align:center;">${foodItem.foodName }</h3>
+                    		</li>          
+         				</c:forEach>
 					</div>
 				</div>
 				<div id='div-gpt-ad-1508681717585-3'
 					style='height: 250px; width: 300px; margin-top: 20px'>
-					<script>
-						googletag.cmd.push(function() {
-							googletag.display('div-gpt-ad-1508681717585-3');
-						});
-					</script>
+					
 				</div>
 			</div>
 		</div>

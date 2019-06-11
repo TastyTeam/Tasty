@@ -164,92 +164,63 @@ body, html {
         //高德地图定位
         
       <c:if test="${longitude==null}">
-        var gaode = new AMap.Map('container');
-        AMap.plugin('AMap.Geolocation', function() {
-            var geolocation = new AMap.Geolocation({
-                enableHighAccuracy: true,//是否使用高精度定位，默认:true
-                timeout: 10000,          //超过10秒后停止定位，默认：5s
-            });
-            geolocation.getCurrentPosition(function(status,result){
-                    onComplete(result);
-            });
-        });
-        
-        //解析定位结果
-        var arr=[];
-        function onComplete(data) {
-            // alert(data.position)
-            var jingdu,weidu;
-            var str = data.position+"";//定义一个字符串
-            arr = str.split(",");
-            jingdu=arr[0];
-            weidu=arr[1];
-            // alert(typeof(jingdu));       
-            jingdu=parseFloat(arr[0]);
-            weidu=parseFloat(arr[1]);
-            // alert(jingdu+","+weidu);
+      window.onload=function(){
+          // 百度地图API功能	
+          map = new BMap.Map("allmap", {
+                  enableMapClick : false
+              }); 
+          //创建中心点坐标
+          var zhong = new BMap.Point(114.528486,38.005106);
+          map.centerAndZoom(zhong, 14);
+          //创建圆
+          var circle = new BMap.Circle(zhong,1500,{strokeColor:"white", strokeWeight:2, strokeOpacity:0.5}); 
+          map.addOverlay(circle);
+          //外卖信息
+          var data_info = [
+          	<c:forEach items="${map_value }" var="map">
+                  [${map.longitude},${map.latitude},"<p style='text-align:center;font-size:20px;'>"+"${map.shopName}" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>${map.shopIntroduce}</p>"+"<p width='30px' height='30px'><a href='mapdishes?shopid=${map.shopId}' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
+               </c:forEach>
+              ];
+          //弹出窗口信息
+          var opts = {
+                      width : 250,     // 信息窗口宽度
+                      height: 80,     // 信息窗口高度
+                  };
+          
+          for(var i=0;i<data_info.length;i++){
+              var waimai=new BMap.Point(data_info[i][0],data_info[i][1]);
 
-
-            // 百度地图API功能	
-            map = new BMap.Map("allmap", {
-                    enableMapClick : false
-                }); 
-            //创建中心点坐标
-            var zhong = new BMap.Point(jingdu,weidu);
-            map.centerAndZoom(zhong, 14);
-            //创建圆
-            var circle = new BMap.Circle(zhong,1500,{strokeColor:"white", strokeWeight:2, strokeOpacity:0.5}); 
-            map.addOverlay(circle);
-            //外卖信息
-            var data_info = [
-            	<c:forEach items="${map_value }" var="map">
-                    [${map.longitude},${map.latitude},"<p style='text-align:center;font-size:20px;'>"+"${map.shopName}" +"</p>" +"<p style='text-align:center;font-size:10px;color:#aaa;'>${map.shopIntroduce}</p>"+"<p width='30px' height='30px'><a href='mapdishes?shopid=${map.shopId}' style='color:#ff4500;font-size:18px;'>查看商家</a></p>"],
-                 </c:forEach>
-                ];
-
-         	/* <c:forEach items="${map_value }" var="map">
-        		alert(${map.longitude});
-        	</c:forEach> */
-            //弹出窗口信息
-            var opts = {
-                        width : 250,     // 信息窗口宽度
-                        height: 80,     // 信息窗口高度
-                    };
-            
-            for(var i=0;i<data_info.length;i++){
-                var waimai=new BMap.Point(data_info[i][0],data_info[i][1]);
-
-                if(BMapLib.GeoUtils.isPointInCircle(waimai,circle)){	
-                    var marker = new BMap.Marker(waimai);  // 创建标注
-                    var content = data_info[i][2];
-                    map.addOverlay(marker);               // 将标注添加到地图中
-                    addClickHandler(content,marker);
-                    addEventListener(content,marker);
-                    //鼠标滑过时
-                    function addEventListener(content,marker){
-                        marker.addEventListener("mouseover",function(e){
-                            openInfo(content,e)}
-                        );
-                    }
-                    //添加单击事件
-                    function addClickHandler(content,marker){
-                        marker.addEventListener("click",function(e){
-                            openInfo(content,e)}
-                        );
-                    }
-                    function openInfo(content,e){
-                        var p = e.target;
-                        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
-                        
-                        var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
-                        map.openInfoWindow(infoWindow,point); //开启信息窗口
-                    }
-                }
-            }
-            map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
-            var opts = {type: BMAP_NAVIGATION_CONTROL_PAN}    
-            map.addControl(new BMap.NavigationControl(opts));
-        }  
+              if(BMapLib.GeoUtils.isPointInCircle(waimai,circle)){	
+                  var marker = new BMap.Marker(waimai);  // 创建标注
+                  var content = data_info[i][2];
+                  map.addOverlay(marker);               // 将标注添加到地图中
+                  addClickHandler(content,marker);
+                  addEventListener(content,marker);
+                  //鼠标滑过时
+                  function addEventListener(content,marker){
+                      marker.addEventListener("mouseover",function(e){
+                          openInfo(content,e)}
+                      );
+                  }
+                  //添加单击事件
+                  function addClickHandler(content,marker){
+                      marker.addEventListener("click",function(e){
+                          openInfo(content,e)}
+                      );
+                  }
+                  function openInfo(content,e){
+                      var p = e.target;
+                      var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+                      
+                      var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
+                      map.openInfoWindow(infoWindow,point); //开启信息窗口
+                  }
+              }
+          }
+          map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+          var opts = {type: BMAP_NAVIGATION_CONTROL_PAN}    
+          map.addControl(new BMap.NavigationControl(opts));
+      }
       </c:if>
       <c:if test="${longitude!=null}">
       window.onload=function(){

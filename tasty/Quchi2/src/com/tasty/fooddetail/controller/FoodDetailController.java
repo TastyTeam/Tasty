@@ -1,4 +1,8 @@
 package com.tasty.fooddetail.controller;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +26,25 @@ public class FoodDetailController {
 	@Resource
 	private FoodDetailServiceImpl fooddetailserviceimpl;
 	@RequestMapping("/fooddetail")
-	public String queryRestaurant(@RequestParam("foodId")int foodId,HttpServletRequest request) {
+	public String queryRestaurant(@RequestParam("foodId")int foodId,HttpServletRequest request) throws IOException {
+		String[] arg = new String[] { "E://anaconda//python", "D://apriori.py",String.valueOf(foodId)};
+		Process proc = Runtime.getRuntime().exec(arg);// 执行py文件
+		System.out.println(proc+"pro");
+		BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream(),"GBK"));
+		String line = null;
+		System.out.println("line");
+		List<Food> foodList=new ArrayList<Food>();
+		while ((line = in.readLine()) != null) {
+			//返回食品
+			System.out.println(line);		
+			int foodid=Integer.parseInt(line);
+			foodList.add(fooddetailserviceimpl.queryFood(foodid));
+			
+		}
+		for(Food i:foodList) {
+			System.out.println(i.getFoodName());
+		}
+		request.setAttribute("foodList", foodList);
 		//查询菜品的详情信息
 		Food food =fooddetailserviceimpl.queryFood(foodId);
 		request.setAttribute("food", food);
