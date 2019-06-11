@@ -1,4 +1,4 @@
-<img src="../../../image/logo.png"/>
+<img src="./image/logo.png"/>
 
 # 2016级项目实训成果展示 
 
@@ -34,7 +34,7 @@
   - Github：[https://github.com/caozechenc](https://github.com/caozechenc)
   
 - 成琼（UI设计师、开发工程师、测试工程师）
-  - Email：[1538549768@qq.com]([图片]mailto:1538549768@qq.com)
+  - Email：[1538549768@qq.com](mailto:1538549768@qq.com)
   - Github：[https://github.com/class2chengqiong](https://github.com/class2chengqiong)
 
   
@@ -43,8 +43,6 @@
 ### 项目截图
 
 <p>
-<img src="./image/logo.png" width=250 height=400 />
-<img src="./image/首页1.png" width=250 height=400 />
-<img src="./image/首页2.png" width=250 height=400 />
+<img src="./image/首页1.png" width=400 height=400 />
+<img src="./image/首页2png" width=400 height=400 />
 </p>
-
