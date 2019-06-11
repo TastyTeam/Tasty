@@ -37,7 +37,7 @@
   - Email：[1538549768@qq.com](mailto:1538549768@qq.com)
   - Github：[https://github.com/class2chengqiong](https://github.com/class2chengqiong)
 
-- 王笑语
+- 王笑语（市场总监、UI设计师、测试工程师）
   - Email：[happytalker@qq.com](happytalker@qq.com)
   - Github：[https://github.com/WangXioy](https://github.com/WangXioy)
 
