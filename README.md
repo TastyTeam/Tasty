@@ -33,7 +33,7 @@
   - Email：[m15226507930_1@163.com](mailto:m15226507930_1@163.com)
   - Github：[https://github.com/caozechenc](https://github.com/caozechenc)
   
-- 成琼（UI设计师、开发工程师、测试工程师）
+- 成琼（质量专家、UI设计师、开发工程师、测试工程师）
   - Email：[1538549768@qq.com](mailto:1538549768@qq.com)
   - Github：[https://github.com/class2chengqiong](https://github.com/class2chengqiong)
 
