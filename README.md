@@ -47,47 +47,4 @@
 <img src="./image/首页1.png" width=250 height=400 />
 <img src="./image/首页2.png" width=250 height=400 />
 </p>
-<p>
-<img src="./image/编辑发布帖子.png" width=250 height=400 />
-<img src="./image/短笑话.png" width=250 height=400 />
-<img src="./image/发现页-悬浮按钮.png" width=250 height=400 />
-</p>
-<p>
-<img src="./image/个人空间.png" width=250 height=400 />
-<img src="./image/话题动态.png" width=250 height=400 />
-<img src="./image/减压放松模块导图.png" width=250 height=400 />
-</p>
-<p>
-<img src="./image/评论动态和点赞.png" width=250 height=400 />
-<img src="./image/热门话题.png" width=250 height=400 />
-<img src="./image/视频动态.png" width=250 height=400 />
-</p>
-<p>
-<img src="./image/树洞中的信.png" width=250 height=400 />
-<img src="./image/树洞主页.png" width=250 height=400 />
-<img src="./image/通讯录.png" width=250 height=400 />
-</p>
-<p>
-<img src="./image/心灵大师榜.png" width=250 height=400 />
-<img src="./image/心灵大师详情.png" width=250 height=400 />
-<img src="./image/宣泄情感.png" width=250 height=400 />
-</p>
-<p>
-<img src="./image/音乐库.png" width=250 height=400 />
-<img src="./image/账号管理.png" width=250 height=400 />
-<img src="./image/发文宣泄.jpg" width=250 height=400 />
-</p>
-<p>
-<img src="./image/每日励志.jpg" width=250 height=400 />
-<img src="./image/申请成为心灵大师.jpg" width=250 height=400 />
-<img src="./image/树洞读信.jpg" width=250 height=400 />
-</p>
-<p>
-<img src="./image/树洞回信.jpg" width=250 height=400 />
-<img src="./image/树洞取信.jpg" width=250 height=400 />
-<img src="./image/我的回信.jpg" width=250 height=400 />
-</p>
-<p>
-<img src="./image/个人资料.png" width=250 height=400 />
-<img src="./image/会话列表.png" width=250 height=400 />
-</p>
+
